@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">I am Travis</title>
+<generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2015-06-17T19:02:58-06:00</updated>
+<id>/</id>
+<author>
+  <name>Travis B. Hartwell</name>
+  <uri>/</uri>
+  <email>nafai@travishartwell.net</email>
+</author>
+
+
+<entry>
+  <title type="html"><![CDATA[nix-shell and Shebang Lines]]></title>
+ <link rel="alternate" type="text/html" href="/2015/06/17/nix-shell-shebang/" />
+  <id>/2015/06/17/nix-shell-shebang</id>
+  <updated>2015-06-17T00:00:00-00:00</updated>
+  <published>2015-06-17T00:00:00-06:00</published>
+  
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri></uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;A few days ago, version 1.9 of the Nix package manager
+&lt;a href=&quot;https://nixos.org/releases/nix/nix-1.9/manual/#ssec-relnotes-1.9&quot;&gt;was released&lt;/a&gt;.
+From the release notes:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;nix-shell can now be used as a #!-interpreter. This allows you to write scripts that dynamically fetch their own dependencies.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;They followed with an example that used GHC’s &lt;code&gt;runhaskell&lt;/code&gt; to execute Haskell
+code using libraries that had been specified in the shebang line.
+Unfortunately, this specific example doesn’t work, as it isn’t sufficient
+information for Haskell to find the Network.HTTP library.&lt;/p&gt;
+
+&lt;p&gt;But this notwithstanding, it is still an interesting change that I have found
+useful.  To use it, start your scripts with two lines similar to this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#! /usr/bin/env nix-shell&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#! nix-shell -i python3 -p python3 python34Packages.pygobject3 libnotify gobjectIntrospection gdk_pixbuf&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;-i&lt;/code&gt; parameter to nix-shell tells it which interpreter to use when executing
+the script.  Often, it is from one of the dependencies, such as in the above
+example.  The &lt;code&gt;-p&lt;/code&gt; parameter gives one or more dependencies to be used. After
+the above lines follows the script (shamelessly borrowed from the
+&lt;a href=&quot;https://wiki.archlinux.org/index.php/Desktop_notifications#Usage_in_programming&quot;&gt;ArchWiki&lt;/a&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#! /usr/bin/env nix-shell&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#! nix-shell -i python3 -p python3 python34Packages.pygobject3 libnotify gobjectIntrospection gdk_pixbuf&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;gi.repository&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Notify&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Notify&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello world&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Notify&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Notification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello world&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;This is an example notification.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;dialog-information&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But its usefulness isn’t limited to just writing scripts interpreted by one of the
+declared dependencies.  I needed to write a wrapper for some NodeJS scripts I
+had installed in the node_modules directory of a project I am working on.  I
+didn’t want Node installed globally, so I did this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/run/current-system/sw/bin/env nix-shell&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#!nix-shell -i bash -p nodejs&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;readonly &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;BIN_DIR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$(cd -P &amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;dirname &lt;span class=&quot;s2&quot;&gt;&amp;quot;${BASH_SOURCE[0]}&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot; &amp;amp;&amp;amp; pwd)&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;readonly &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$(basename ${BASH_SOURCE[0]/%-wrapper/})&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;s2&quot;&gt;&amp;quot;${BIN_DIR}&amp;quot;&lt;/span&gt;/&lt;span class=&quot;s2&quot;&gt;&amp;quot;${CMD}&amp;quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$@&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I simply made a symlink for each program in my &lt;code&gt;node_modules/.bin&lt;/code&gt; directory to
+this file, with the name &lt;code&gt;program-wrapper&lt;/code&gt;, for example, &lt;code&gt;tern-wrapper&lt;/code&gt; to wrap
+&lt;a href=&quot;http://ternjs.net/&quot;&gt;tern&lt;/a&gt;.  Notice my script doesn’t directly call nodejs,
+though the underlying script it calls does.&lt;/p&gt;
+
+&lt;p&gt;One more example.  I wrote the following script to render this document as I was
+writing it to check the way it looked in HTML:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/run/current-system/sw/bin/env nix-shell&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#!nix-shell -i bash -p inotifyTools pandoc&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;readonly &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;FILE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$*&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$# &lt;/span&gt;-lt &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Usage:  ${0} MARKDOWN_FILE&amp;quot;&lt;/span&gt; 2&amp;gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;1
+    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt; 2&amp;gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;1
+    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;MARKDOWN_FILE must exist before launching.&amp;quot;&lt;/span&gt; 2&amp;gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;1
+    &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; ! -e &lt;span class=&quot;s2&quot;&gt;&amp;quot;${FILE}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;${FILE} doesn&amp;#39;t yet exist, create it before launching!&amp;quot;&lt;/span&gt; 2&amp;gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;1
+    &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Assume the extension is .md&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;readonly &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;OUTPUT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;basename &lt;span class=&quot;s2&quot;&gt;&amp;quot;${FILE}&amp;quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;.md&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;.html
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Press Control-C to quit watching for changes on ${FILE}.&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    inotifywait -q -e modify &lt;span class=&quot;s2&quot;&gt;&amp;quot;${FILE}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Updating HTML for ${FILE}&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+        pandoc -s -f markdown -t html -o &lt;span class=&quot;s2&quot;&gt;&amp;quot;${OUTPUT}&amp;quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;${FILE}&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;One last example, where I couldn’t use nix-shell in a shebang line.  I was
+playing with &lt;a href=&quot;http://jaspervdj.be/hakyll/&quot;&gt;Hakyll&lt;/a&gt;.  After you use &lt;code&gt;haykll-init&lt;/code&gt;
+to generate your project structure, all work is done by compiling your own code
+(in this case, a &lt;code&gt;site.hs&lt;/code&gt; that has an accompanying cabal file.  Since something
+similar to the example from the release notes didn’t work, I tried the
+following, a variant of what I’ve used in &lt;code&gt;.nix&lt;/code&gt; files.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#! /usr/bin/env nix-shell&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#! nix-shell -i bash --pure  -p &amp;#39;pkgs.haskellPackages.ghcWithPackages (pkgs: with pkgs; [ hakyll cabal-install ])&amp;#39;&lt;/span&gt;
+
+cabal run &lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But nix-shell didn’t like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;nafai@shedemei:~/Documents/blog/hakyll/technically
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./site-wrapper 
+error: syntax error, unexpected &lt;span class=&quot;s1&quot;&gt;&amp;#39;)&amp;#39;&lt;/span&gt;, at &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;string&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:1:66&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;So I had to just make this one a regular shell script:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/run/current-system/sw/bin/bash&lt;/span&gt;
+
+nix-shell --pure &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+          -p &lt;span class=&quot;s2&quot;&gt;&amp;quot;pkgs.haskellPackages.ghcWithPackages (pkgs: with pkgs; [ hakyll cabal-install ])&amp;quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+          --run &lt;span class=&quot;s2&quot;&gt;&amp;quot;cabal run $@&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Anyway, just in these last few days I’ve found interesting ways to use this new
+capability.  I hope this gives some examples of how it may be used.  I welcome
+any feedback from more experienced Nix users (or comments in general about my
+scripting, I’m a little out of practice).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I intend to move this content to a blog hosted on my own server once I figure
+out a static blog generator to use and all of that associated nonsense.  Putting
+this here for now, I will update with a pointer to the final location.&lt;/p&gt;
+
+&lt;p&gt;You can find me at &lt;a href=&quot;http://twitter.com/travisbhartwell&quot;&gt;@travisbhartwell&lt;/a&gt; or as
+&lt;code&gt;Nafai&lt;/code&gt; on &lt;code&gt;#nixos&lt;/code&gt; on &lt;a href=&quot;http://freenode.net&quot;&gt;freenode.net&lt;/a&gt;.  Most of my personal
+code can now be found on &lt;a href=&quot;http://gitlab.com/u/travisbhartwell&quot;&gt;Gitlab&lt;/a&gt;,
+including my shell scripts and my current configurations for
+&lt;a href=&quot;http://nixos.org&quot;&gt;Nix OS&lt;/a&gt;, bash, X, &lt;a href=&quot;http://i3wm.org&quot;&gt;i3&lt;/a&gt;, and
+&lt;a href=&quot;https://github.com/syl20bnr/spacemacs/&quot;&gt;Spacemacs&lt;/a&gt;.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/2015/06/17/nix-shell-shebang/&quot;&gt;nix-shell and Shebang Lines&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;&quot;&gt;I am Travis&lt;/a&gt; on June 17, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[No Apologies, or, provoco et non transverto]]></title>
+ <link rel="alternate" type="text/html" href="/2012/02/24/provoco-et-non-transverto/" />
+  <id>/2012/02/24/provoco-et-non-transverto</id>
+  <published>2012-02-24T02:42:00-07:00</published>
+  <updated>2012-02-24T02:42:00-07:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri></uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;1.&lt;/p&gt;
+
+&lt;p&gt;As I was writing yet another blog post in my head this evening, I was going to use a source and ideas that many might think of as “new-agey” or dismiss as nonsense to explain the point I was making. I even found myself coming up with something to the effect of, “Even if you don’t believe this, look how it, as an even just a metaphor, fits with what I am trying to say.”&lt;/p&gt;
+
+&lt;p&gt;It was likely prompted a bit by &lt;a href=&quot;http://www.joeydevilla.com/2008/08/08/why-the-lucky-stiff-on-why-you-should-create/&quot;&gt;something I read&lt;/a&gt; earlier in the night, but I realized this was not an isolated instance for me. It’s something I’ve done several times before in my blog. And, even, all through out my life. I have apologized when using stories and ideas from my faith and its scriptures. I have apologized when the source of what I was sharing was so different from my church and that of many who might read it. I have even apologized when I used examples from calculus and physics to explain my ideas.&lt;/p&gt;
+
+&lt;p&gt;Why do I do this? I know that it is something I have done and felt the need for my entire life. It started within my (extended in particular) family I was born into and has continued in most situations and circumstances all through out my life. But, yes, I have been indeed blessed with the love of and for so many people who are different from myself. But, somehow, this has resulted in a belief I’m working on overcoming that no one else is like me and those parts of me that are most different from whoever I am with or talking to need to be suppressed or hidden or apologized for.&lt;/p&gt;
+
+&lt;p&gt;§&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/provoco-et-non-transverto/standardworks.jpg&quot; alt=&quot;LDS Standard Works&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have many wonderful friends that do not share my religious views and may even sharply disagree with them. I have many wonderful friends that have no religious belief at all.&lt;/p&gt;
+
+&lt;p&gt;But my belief in God and my understanding of Him and how to “worship … according to the dictates of [my] own conscience” (&lt;a href=&quot;http://www.lds.org/scriptures/pgp/a-of-f/1.11?lang=eng#10&quot;&gt;Article of Faith 11&lt;/a&gt;), are simply that — my beliefs. When I talk of God or share quotes from the Book of Mormon or leaders of the church, I am not attacking anyone who might not believe in those things. I’m just explaining the world from my perspective.&lt;/p&gt;
+
+&lt;p&gt;§&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/provoco-et-non-transverto/Pema_Chodron.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I, of course, have many wonderful friends and family members that do share my religion and my church. Many of them seek for their spiritual understanding of the world solely from the teachings of the church, because that is what speaks to them.&lt;/p&gt;
+
+&lt;p&gt;But, I will often refer to teachings from a Buddhist teacher or some philosopher or even fiction. Likely, they may be uncomfortable with or question me in some way when I quote these things. But, again, that is me. I know that God  ” speaketh unto [us] according to [our] language, unto [our] understanding.” (&lt;a href=&quot;http://www.lds.org/scriptures/bofm/2-ne/31.3?lang=eng#2&quot;&gt;2 Nephi 31:3&lt;/a&gt;). And, for me, my language and my understanding would be incomplete if it didn’t include truth and wisdom “out of the best books” (&lt;a href=&quot;http://www.lds.org/scriptures/dc-testament/dc/88.118?lang=eng#117&quot;&gt;Doctrine and Covenants 88:118&lt;/a&gt;) of all types. So, no need to apologize.  This is me.&lt;/p&gt;
+
+&lt;p&gt;§&lt;/p&gt;
+
+&lt;p&gt;[&lt;img src=&quot;/images/provoco-et-non-transverto/first-principles.png&quot; alt=&quot;First principles of differentiation&quot; /&gt;]&lt;/p&gt;
+
+&lt;p&gt;I realize a large number of my friends and family that read what I write either haven’t studied or don’t remember or understand mathematics and physics.&lt;/p&gt;
+
+&lt;p&gt;But, I see and describe the world through the lenses of math and science. They are the most basic ways to describe the world and the universe around us. And, just as I would do with the other examples mentioned, I consider my audience. But I still follow my mind and heart and use these things, as long as I am able to give enough context that my audience can understand the idea I am sharing. Again, no reason to apologize for using what I know and expresses things in my language.&lt;/p&gt;
+
+&lt;p&gt;2.&lt;/p&gt;
+
+&lt;p&gt;Part of the impetus behind these thoughts belongs to a quote I read tonight. It was quoted in a technical blog entry entirely unrelated to what I’m writing about here. But it struck me:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;when you don’t create things, you become defined by your tastes rather
+than ability. your tastes only narrow &amp;amp; exclude people. so create.&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.joeydevilla.com/2008/08/08/why-the-lucky-stiff-on-why-you-should-create/&quot;&gt;“why the lucky stiff” on Why You Should
+Create&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It may seem like above I am defending and defining myself by my tastes. But, in many ways, I see what I have done to this point as defining myself by my tastes more than ever. My tastes, preferences, and beliefs have defined how I act. And, in turn, I have allowed them and my feeling of “different” to hinder what I create. Whether it be in my relationships. Or the things that I write. Or just how I present myself to the world. My journals sometimes are vastly different from what anyone else sees on the outside. I don’t share most of those parts with even with my family. And, so, instead of writing or creating to teach and uplift and please the world, I keep those things hidden. I never create. I exclude certain groups or even the world from knowing what is in me. The view the world has of me is narrow. My shame over my tastes has defined me.&lt;/p&gt;
+
+&lt;p&gt;3.&lt;/p&gt;
+
+&lt;p&gt;My name, though not chosen for this intention, has some deep and telling meaning. Being fascinated by words and language, I like to study word origins and meanings. I’ve discovered that Travis shares the same root as the word “traverse”, which is the Latin word “transversum”. The meaning of the Latin root is “laying across/from side to side; flanking/oblique; moving across/at right angle”. I once found Travis in a list of name meanings, and the one that stuck with me is “At the Crossroads”. The related word “traverse” has a meaning of “a route or way across or over”. It is these two meanings with each day become more and more significant to me.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/marksmallwoodcommunications/4311667717/&quot; title=&quot;Crossroads by MarkSmallwood, on Flickr&quot;&gt;&lt;img src=&quot;/images/provoco-et-non-transverto/4311667717_f143ba91d7.jpg&quot; alt=&quot;Crossroads&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A crossroad is where two paths meet; you are not on either one but not really on both either. Before you lies a choice of which way to follow. In so many ways, I have felt at the crossroads in my life. Different from one group, but not quite another. Sitting there at the crossroads, I have views of the different paths. Those of my religion and those not. Those that grok mathematics and physics (and grok, too) and those that don’t. Those disabled and those who are not. Those who have had a healthy life and those seriously ill and looking at their mortality.   Those that use Emacs and those that use vim.  Those that use Ubuntu and those that use Fedora.  I could go on.&lt;/p&gt;
+
+&lt;p&gt;I stand at the crossroads. A person would not apologize to someone they meet in the crossroads for having a different destination. They will freely share their destination is different. Why, then, shouldn’t I? Over and over in recent years it seems to be my role in life to be challenged by or to challenge others to look at things in another’s shoes and from a different perspective. Since I had thought about the Latin roots of my name, I had a friend who has studied Latin help me come up with a motto that you see as the tagline of my blog:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;provoco et non transverto&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Roughly, “I challenge and do not turn away.” It may not be entirely accurate in translation and grammar, but it’s the meaning I ascribe.&lt;/p&gt;
+
+&lt;p&gt;I am trying not to make it more and more a challenge not of confrontation and fight. I have brought myself to that point many times in my life, in feeling the need to defend my tastes and views. I think part of the fight comes from the shame I have felt that has lead me to apologize or suppress. So, in fact, by being more willing to be open about what I hold dear and use those things freely to inspire and bring creation into my life, I think I will fight less. I will be able to share and learn the differences in the world with the world.&lt;/p&gt;
+
+&lt;p&gt;If my creations challenge others to think about their own views and understanding of the world and truth and beauty and I continue to create and not turn away from what is in me, I will be including all the world. So, I challenge you here, and I do not turn away. How do you let your tastes or perceived tastes of the world define what you create and the love you bring into the world? Can you let go of exclusion and narrowness? Can you see all the people in the world for their good and let them see yours?&lt;/p&gt;
+
+&lt;p&gt;I am trying to do this better each day.&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;/2012/02/24/provoco-et-non-transverto/&quot;&gt;No Apologies, or, provoco et non transverto&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;&quot;&gt;I am Travis&lt;/a&gt; on February 24, 2012.&lt;/p&gt;
+  </content>
+</entry>
+
+</feed>
