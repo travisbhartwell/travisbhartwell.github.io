@@ -2,27 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">I am Travis</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="/feed.xml" />
-<link rel="alternate" type="text/html" href="" />
-<updated>2015-06-17T20:33:31-06:00</updated>
-<id>/</id>
+<link rel="self" type="application/atom+xml" href="http://iam.travishartwell.net/feed.xml" />
+<link rel="alternate" type="text/html" href="http://iam.travishartwell.net" />
+<updated>2015-06-17T21:34:27-06:00</updated>
+<id>http://iam.travishartwell.net/</id>
 <author>
   <name>Travis B. Hartwell</name>
-  <uri>/</uri>
+  <uri>http://iam.travishartwell.net/</uri>
   <email>nafai@travishartwell.net</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[nix-shell and Shebang Lines]]></title>
- <link rel="alternate" type="text/html" href="/2015/06/17/nix-shell-shebang/" />
-  <id>/2015/06/17/nix-shell-shebang</id>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2015/06/17/nix-shell-shebang/" />
+  <id>http://iam.travishartwell.net/2015/06/17/nix-shell-shebang</id>
   <updated>2015-06-17T00:00:00-00:00</updated>
   <published>2015-06-17T00:00:00-06:00</published>
   
   <author>
     <name>Travis B. Hartwell</name>
-    <uri></uri>
+    <uri>http://iam.travishartwell.net</uri>
     <email>nafai@travishartwell.net</email>
   </author>
   <content type="html">
@@ -151,20 +151,99 @@ including my shell scripts and my current configurations for
 &lt;a href=&quot;http://nixos.org&quot;&gt;Nix OS&lt;/a&gt;, bash, X, &lt;a href=&quot;http://i3wm.org&quot;&gt;i3&lt;/a&gt;, and
 &lt;a href=&quot;https://github.com/syl20bnr/spacemacs/&quot;&gt;Spacemacs&lt;/a&gt;.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/2015/06/17/nix-shell-shebang/&quot;&gt;nix-shell and Shebang Lines&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;&quot;&gt;I am Travis&lt;/a&gt; on June 17, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2015/06/17/nix-shell-shebang/&quot;&gt;nix-shell and Shebang Lines&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 17, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[A Poem: Reflected Back]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/06/08/a-poem-reflected-back/" />
+  <id>http://iam.travishartwell.net/2012/06/08/a-poem-reflected-back</id>
+  <published>2012-06-08T06:12:00-06:00</published>
+  <updated>2012-06-08T06:12:00-06:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I may be going blind&lt;br /&gt;
+and the darkness encroaching from all sides.&lt;br /&gt;
+But at least with clarity&lt;br /&gt;
+now I see all directly in front of me&lt;br /&gt;
+No longer the periphery is important&lt;br /&gt;
+this I must finally accept&lt;br /&gt;
+When looking straight forward&lt;br /&gt;
+I see me, reflected right back.&lt;br /&gt;
+In this mirror, I see the hurt and the pain and the exhaustion&lt;br /&gt;
+all reflected so clearly in what is before me.&lt;br /&gt;
+But also sometimes the clouds move&lt;br /&gt;
+and the sun shines, revealing what is inside.&lt;br /&gt;
+That glory, those heaven-sent photons&lt;br /&gt;
+hit my heart with a whisper&lt;br /&gt;
+I open my heart to finally hear&lt;br /&gt;
+and I am lifted to that higher place&lt;br /&gt;
+Elevated, I see that which is reflected back,&lt;br /&gt;
+that right in front of me.&lt;br /&gt;
+Different from before is what my dim eyes see&lt;br /&gt;
+higher, noble, good, beautiful.&lt;br /&gt;
+Suddenly, as if I’ve found just one last breath,&lt;br /&gt;
+the exhaustion sets in.&lt;br /&gt;
+My vision falls&lt;br /&gt;
+but I hold it in my heart, a little spark.&lt;br /&gt;
+Even when it feels I cannot rise to those lofty heights of grandeur&lt;br /&gt;
+no longer one day I will see&lt;br /&gt;
+So clearly, the light I see right in front of me&lt;br /&gt;
+won’t be reflected back to me, but reality.  &lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2012/06/08/a-poem-reflected-back/&quot;&gt;A Poem: Reflected Back&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 08, 2012.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Learning Lessons]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/06/07/learning-lessons/" />
+  <id>http://iam.travishartwell.net/2012/06/07/learning-lessons</id>
+  <published>2012-06-07T17:21:00-06:00</published>
+  <updated>2012-06-07T17:21:00-06:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;It often takes a long time to learn lessons and let them sink in. Sometimes we rebel against what we know that life is saying to us. But, sometimes, you get to a point where you can no longer ignore that which is front of you.&lt;/p&gt;
+
+&lt;p&gt;Of course, this is also due to a lifetime of things, but in recent months, my mind and heart have finally started opening up to the things I need to know and do. I never imagined, and still waver at times, that I would be able to reach the point I am or get on the path that I am. But, I realize all things will be provided. I just have to seek for those things.&lt;/p&gt;
+
+&lt;p&gt;Indeed, this seeking is a lesson that I am learning. Most importantly is what we seek. When I desired peace and joy and strength, where was I looking? I was looking at where I had none. But by bringing my focus repeatedly back to what I truly want and the conditions that I need to have those things, then it will come about.&lt;/p&gt;
+
+&lt;p&gt;In and of itself, this is a lesson for me; there is so much beyond my reach. I naturally think to get what I desire, I have to bring it to myself. But time and again, I have been taught what is most important is having the want first. And, then do what is in my power to bring about the circumstances needed for what I desire. If my desire is true and right, in those circumstances, I will see the blessings flourish.&lt;/p&gt;
+
+&lt;p&gt;That action, no matter how small, is a critical part. As I have learned more of neuroscience, I realize our brains follow a simple reward-driven focus. The brain will naturally seek to have that release of neurochemicals that make it feel good. An oft used phrase is “What fires together, wires together.” If a certain action brings reward, the brain will form new neural connections to reinforce that. This is why habit — and in its extreme form, addiction — is so powerful. Your brain knows that certain things bring the desired reward, and it will bring all to bring that about.&lt;/p&gt;
+
+&lt;p&gt;Luckily, we as humans can recognize this and use it to craft those “right conditions” for whatever we want. What are the things that bring them about? I have once again embraced a long-lost habit of writing and journaling. I know, without a doubt, that it has been instrumental in the healing in all facets of my life that I have experienced in these last six months. When I forget what has worked in the past and let go, of course I don’t see the life I want. But, in retrospect, consistently the happiest and most authentic parts of my life have been when I have been writing. I remember that, and the other little things I know have helped. I no longer do them because I “have to”, but because just as sure as I need my medication to keep my body alive, I need writing and other activities to stay alive emotionally and spiritually.&lt;/p&gt;
+
+&lt;p&gt;This brings me to perhaps the key lesson I’ve learned. To remember. Spencer W. Kimball taught that “remember” was the most important word in the English language. Jesus Christ told his disciples that when sending them the Holy Ghost for comfort after he was gone, the Holy Ghost would bring all things to their remembrance. We cannot forget. What fires together, wires together. Neural pathways get formed. If we remember the blessings of our lives and what has worked in the past, what those things were associated with will work for you. It’s fundamental. Also, I have to remember what that I’ve been taught over and over that these things do not work if I don’t remember what has been taught to me as the order of love. I can’t do anything without first receiving the love of God and putting Him first in my life. It is only with his help that I can then show the love and self-care for myself, to have my own needs met. With my needs met, I can then show and share love with others.&lt;/p&gt;
+
+&lt;p&gt;I’m still reminding myself of these things, every day and sometimes every hour. I’ve had to go back to first principles over and over in recent times to learn them. As I remember them, I also feel the nudge and the muse to not just keep it inside. I need to write these things. I will be exploring these ideas in greater detail in later blog posts in the coming weeks.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2012/06/07/learning-lessons/&quot;&gt;Learning Lessons&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 07, 2012.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[No Apologies, or, provoco et non transverto]]></title>
- <link rel="alternate" type="text/html" href="/2012/02/24/provoco-et-non-transverto/" />
-  <id>/2012/02/24/provoco-et-non-transverto</id>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/02/24/provoco-et-non-transverto/" />
+  <id>http://iam.travishartwell.net/2012/02/24/provoco-et-non-transverto</id>
   <published>2012-02-24T02:42:00-07:00</published>
   <updated>2012-02-24T02:42:00-07:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
-    <uri></uri>
+    <uri>http://iam.travishartwell.net</uri>
     <email>nafai@travishartwell.net</email>
   </author>
   <content type="html">
@@ -178,7 +257,7 @@ including my shell scripts and my current configurations for
 
 &lt;p&gt;§&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/provoco-et-non-transverto/standardworks.jpg&quot; alt=&quot;LDS Standard Works&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://iam.travishartwell.net/images/provoco-et-non-transverto/standardworks.jpg&quot; alt=&quot;LDS Standard Works&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I have many wonderful friends that do not share my religious views and may even sharply disagree with them. I have many wonderful friends that have no religious belief at all.&lt;/p&gt;
 
@@ -239,7 +318,145 @@ Create&lt;/a&gt;&lt;/li&gt;
 &lt;p&gt;I am trying to do this better each day.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;/2012/02/24/provoco-et-non-transverto/&quot;&gt;No Apologies, or, provoco et non transverto&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;&quot;&gt;I am Travis&lt;/a&gt; on February 24, 2012.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2012/02/24/provoco-et-non-transverto/&quot;&gt;No Apologies, or, provoco et non transverto&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on February 24, 2012.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Questions Asked As I Lay In a Hospital Bed]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/02/13/questions-asked-as-i-lay-in-a-hospital-bed/" />
+  <id>http://iam.travishartwell.net/2012/02/13/questions-asked-as-i-lay-in-a-hospital-bed</id>
+  <published>2012-02-13T22:07:00-07:00</published>
+  <updated>2012-02-13T22:07:00-07:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Even though it had been a part of and possibility in my life at the beginning, I don’t think I was consciously aware of the concepts of pain and my own death until I was nearly 8. And the brief moments that taught me this I cannot ever forget.&lt;/p&gt;
+
+&lt;p&gt;It was in the last week of 1984 and I was still in the hospital recovering from my first surgery on my ankles. We didn’t have an entire room to ourselves. I remember the door to our room being open, letting in a little light and giving room for the nurses to peek in on their young patients. There were 4 or 6 beds in the room, each granted privacy only by some hanging curtains.&lt;/p&gt;
+
+&lt;p&gt;And those curtains were not enough to keep me from hearing what kept me awake that night. I remember lying awake in my bed. Whether I was woke by what comes next or was already awake, I don’t remember. But what I remember so clearly still sends chills up my spine and confusion to my soul.&lt;/p&gt;
+
+&lt;p&gt;“I want you to just shoot me, Mom! I want to die! It hurts too much! It isn’t working! Just get a gun and shoot me, Mom!”&lt;/p&gt;
+
+&lt;p&gt;This came from a boy across the room and to the right of me. He was a few years older than me, perhaps 10. He was suffering from brain cancer. The treatments and chemotherapy had not brought the desired relief. Despite all efforts, they just had not worked. The doctors were asking his parents to consider one more round.&lt;/p&gt;
+
+&lt;p&gt;Those details may be fuzzy, but I do remember so clearly his words and the pain and anguish I heard in his voice. I remember also the heaviness of heart and confusion of soul that I felt as I lay there awake thinking about what I had heard. Twenty-seven years later, I still feel his words.&lt;/p&gt;
+
+&lt;p&gt;In that time, I have had my share of physical pain. And, perhaps I have not come so close to the face of death as my young friend, but at times I have felt his gaze.&lt;/p&gt;
+
+&lt;p&gt;Maybe it’s a difference between youth and experience. Or the degree of physical pain felt all at once. But my physical pain alone has not brought me to the agony of soul that this young boy felt, enough to plead for my death.&lt;/p&gt;
+
+&lt;p&gt;But, in truth, I have found myself exclaiming and expressing the desire that he said so clearly. Wouldn’t it be better if my mortal journey ended? Wouldn’t the pain of body and soul finally be over? Could this not quickly come?&lt;/p&gt;
+
+&lt;p&gt;But what brought me here, to express such pain? The story of Alma the Younger in the Book of Mormon is one of the clearest expressions of the emotional side of this pain that I know of. He and his friends had actively been working against the work of the church. As they were going about this, an angel of God appeared to them. When the angel commanded them to cease what they were doing, Alma woke up to the reality of the things that he had been doing. He finally saw how his actions had harmed others. He saw how his actions would keep him from God. He began to feel great pain and shame in his heart over these things. He looked forward to the future, and having to deal with the consequences of these actions. He wished to be “banished both body and soul” so he wouldn’t have to feel that pain now or the pain to come.&lt;/p&gt;
+
+&lt;p&gt;As I have dealt with the pains of surgery and disease, I also have walked a road in which I found myself made starkly aware of my own mistakes. I have seen the ways in which they have hurt other people. My weakness, in body and soul, has become so clear.&lt;/p&gt;
+
+&lt;p&gt;And at times, the combined pain of body and soul I felt has been overwhelming. The dark robes of death seemed to loom over me at times. I, too, have laid in a hospital bed at night, pleading with a Parent to just let it end. I wanted to just be released from the pain that I felt. I have looked forward, just as Alma, to the road I will have to take.&lt;/p&gt;
+
+&lt;p&gt;And, on that road, I only see more pain. Just as the young cancer patient was frustrated and tired, agonizing that his treatments were not working, I have seen the same. I can only see dialysis and another transplant in the eventual future on my road ahead. My physiology and the immunosuppressants I take make it nigh impossible to be without infection. And that infection continues to take its toll. And, with another transplant, it will likely take its toll there as well. It may not happen this month or this year, but I know I will one day be faced with this question, sooner than many.&lt;/p&gt;
+
+&lt;p&gt;Will another round of my treatment help? Or will it just prolong things? With the pain I continue to feel over my weakness and the consequences of my mistakes added upon, I wonder — do I continue? Do I have the strength in body and soul and mind to continue this road? Have I fulfilled my purpose here on earth?&lt;/p&gt;
+
+&lt;p&gt;I don’t know what happened to my fellow patient. Perhaps he soon passed and received the relief of body and soul he sought so desperately in the night. But the feeling and consequence of his words continue with me to this day, and connect me to my own questions, as I ask, “do I want to try again?” I’m just glad I was not faced with those questions back when I was nearly 8. The weight of just hearing another ask them was soul-searing enough.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2012/02/13/questions-asked-as-i-lay-in-a-hospital-bed/&quot;&gt;Questions Asked As I Lay In a Hospital Bed&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on February 13, 2012.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Mid-Life, Not so Much]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/02/10/midlife-not-so-much/" />
+  <id>http://iam.travishartwell.net/2012/02/10/midlife-not-so-much</id>
+  <published>2012-02-10T11:22:00-07:00</published>
+  <updated>2012-02-10T11:22:00-07:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p style=&quot;text-align: right&quot;&gt;Time served on the earth doesn’t mean you grow in mind&lt;/p&gt;
+
+&lt;p style=&quot;text-align: right&quot;&gt;- Creed, Signs, Weathered&lt;/p&gt;
+
+&lt;p&gt;I want to dedicate today to the four loves of my life:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;to the one whose love brought me life and held onto it&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;to the one whose love brought me a second life&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;to the one who, when I looked in her eyes, taught me love makes the man&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;finally, to my puppy love, whose love is pure.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;∞&lt;/p&gt;
+
+&lt;p&gt;Thirty-five years ago, a spirit and a body came together, the creation of a new soul. But the body wasn’t quite ready for the spirit. In the order of the universe, though, this soul had to spring forth at that time.&lt;/p&gt;
+
+&lt;p&gt;The body, with its first gasp of air, with its first cry, began to seek and yearn only for what every other body desires — survival. But, instead of just breathing in and out and taking in the gifts the world has given, the soul needed more. From that very second, the soul knew it had to fight. It had to survive. And so, it began.&lt;/p&gt;
+
+&lt;p&gt;Where was this fight coming from? What was inside this child that was the spark to light this flame? Oh, how this boy wished he could just tell the world what he needed. But, alas, this new body could not. And so the fight began and it needed to get out.&lt;/p&gt;
+
+&lt;p&gt;Yet, in reality, the fight was because something inside this body could get out. The boy’s bladder was blocked. He could not get the toxins and waste out of his body. And he could not tell anyone.&lt;/p&gt;
+
+&lt;p&gt;It continued. The pain increased. The need for survival grew greater. And the fight within him grew as this did. The world around him seemed only interested on the surface, on what was on his outside. But the truth, the need, the real definition of that pure infant was written. And so, like a wild animal fighting for its very life (indeed, wasn’t that what was happening here?), his fight intensified.&lt;/p&gt;
+
+&lt;p&gt;When what was accumulating inside of him was finally understood and was noticed, it was released. He was given relief. At least for now, the body could rest, it could heal.&lt;/p&gt;
+
+&lt;p&gt;But not the spirit. Unlike the body that was granted release, the boy did not let go of all that had gathered in the soul. In fact, the survival instinct made him fight and hold on even tighter. What could he not let go of? What did his entire being cling tightly to, as the only thing it had known?&lt;/p&gt;
+
+&lt;p&gt;It was fear. Fear that more would not notice what was inside. Fear that he might not live. And the fear fueled that fight. Even as he grew older and the memories of that time faded and consciousness grew, deep within the fight and fear were held close.&lt;/p&gt;
+
+&lt;p&gt;The battles that occur in the deep, silent chambers of the soul aren’t seen on the surface. At least, not initially. But, every now and again, the fear broke through and manifested at the surface. Pain. Confusion. Desperation. Sadness.&lt;/p&gt;
+
+&lt;p&gt;A little over thirty years passed from the birth of that new soul. Little did he know that his body and spirit had continued to fight. What had lingered in his body in his first few weeks of his life had taken its toll. And, the fight that his spirit held on to so tightly began to erupt. His body began to fail. And the spirit, still clinging so tightly to all it had known deep inside, fought for its life. But in so doing, it lost almost all that the soul had grown to hold dear.&lt;/p&gt;
+
+&lt;p&gt;And so, here I stand, thirty-five years from that day. My body and soul, still with fight within. But it is taking its toll.&lt;/p&gt;
+
+&lt;p&gt;I’m rusted and weathered, barely holdin’ together&lt;br /&gt;
+I’m covered w/ skin that peels &amp;amp; it just won’t heal&lt;br /&gt;
+…No, it just won’t heal, no, no, no  &lt;/p&gt;
+
+&lt;p&gt;The sun shines and I can’t avoid the light&lt;br /&gt;
+I think I’m holdin’ on to life too tight…&lt;br /&gt;
+Ashes to ashes, and dust to dust&lt;br /&gt;
+Sometimes I feel like giving up… yeah, I said,&lt;br /&gt;
+Sometimes I feel like giving up… ’cause I’m,  &lt;/p&gt;
+
+&lt;p&gt;…It just won’t heal, no  &lt;/p&gt;
+
+&lt;p&gt;‘Cause one day it ends – One day we die&lt;br /&gt;
+Believe what you will – That is your right&lt;br /&gt;
+But I choose to win – I choose to fight…&lt;br /&gt;
+To fight… ‘Cause I’m,  &lt;/p&gt;
+
+&lt;p&gt;…Covered with skin that peels &amp;amp; it just won’t heal  &lt;/p&gt;
+
+&lt;p&gt;– Creed, Weathered&lt;/p&gt;
+
+&lt;p&gt;I don’t know so much what “winning” means any more.  Where does my story continue? The infections never leave my body. The very things that are keeping me alive — the immunosupression and the catheterization — are also the things that are keeping what is killing me inside my body. The infections will not leave.&lt;/p&gt;
+
+&lt;p&gt;No matter what I try, my spirit and soul will not let go of the fighting, the pain, and the hurt of a lifetime. The fight is all my soul knows. But my head knows that it is no longer what I need, holding onto it will not bring me joy and happiness.&lt;/p&gt;
+
+&lt;p&gt;Here I am, thirty-five years later. Who would have ever thought this is where I’d be today?&lt;/p&gt;
+
+&lt;p&gt;And the soul is so exposed.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2012/02/10/midlife-not-so-much/&quot;&gt;Mid-Life, Not so Much&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on February 10, 2012.&lt;/p&gt;
   </content>
 </entry>
 
