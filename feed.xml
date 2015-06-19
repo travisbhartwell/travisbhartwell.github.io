@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://iam.travishartwell.net/feed.xml" />
 <link rel="alternate" type="text/html" href="http://iam.travishartwell.net" />
-<updated>2015-06-18T06:26:45-06:00</updated>
+<updated>2015-06-18T21:24:02-06:00</updated>
 <id>http://iam.travishartwell.net/</id>
 <author>
   <name>Travis B. Hartwell</name>
@@ -456,6 +456,408 @@ To fight… ‘Cause I’m,  &lt;/p&gt;
 &lt;p&gt;And the soul is so exposed.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2012/02/10/midlife-not-so-much/&quot;&gt;Mid-Life, Not so Much&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on February 10, 2012.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[The Real Metric of Personal Growth: The Sign of the Derivative of the Magnitude vs. Time Curve]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/11/13/the-real-metric-of-personal-growth-the-sign-of-derivative-of-the-magnitude-vs-time-curve/" />
+  <id>http://iam.travishartwell.net/2011/11/13/the-real-metric-of-personal-growth-the-sign-of-derivative-of-the-magnitude-vs-time-curve</id>
+  <published>2011-11-13T08:01:00-07:00</published>
+  <updated>2011-11-13T08:01:00-07:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;It’s no secret that I have had and am having great personal struggles in many areas of my life. As I fight to make sense of my life and where I am, I have many conversations seeking the wisdom of those I trust. Last week, in one of these conversations, I was reminded once again of a principle I learned a while ago from a different wise friend. I believe I need to write it down and attempt to explain this principle so it sticks this time. I know that truth, the kind of truth that has power to change life, can come from many sources and in unexpected ways.&lt;/p&gt;
+
+&lt;p&gt;To explain it, I ask you to hearken back to college or high school calculus, or at least algebra and I’ll attempt to explain enough for the principle to come across. It shouldn’t be much of a surprise that I would get understanding by using calculus as a metaphor for personal growth principles — a few months ago I &lt;a href=&quot;http://iam.travishartwell.net/2011/06/26/resonance/&quot; title=&quot;Resonance&quot;&gt;used some concepts from physics&lt;/a&gt; to explain why certain things stick with me.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-graph-of-personal-growth&quot;&gt;The Graph of Personal Growth&lt;/h2&gt;
+
+&lt;p&gt;Let’s imagine you have a graph of some curve. (I apologize I don’t currently have any diagrams to help you visualize this, it was a lot easier to just get the concepts out than figure out how to get adequate images to describe it.) The X axis represents time: the further to the right you get, the later it is. The Y axis can represent anything we are measuring, something we want to improve. To make it something everyone can relate to, let’s picture the Y axis as being the amount of money we have saved. The higher up on the Y axis, the more money we have saved. But, this can be applied to most anything that we measure, just search for &lt;a href=&quot;http://www.google.com/search?q=quantified+self&quot;&gt;&lt;em&gt;“quantified self”&lt;/em&gt;&lt;/a&gt; for examples of what many people are using to measure growth in their life.&lt;/p&gt;
+
+&lt;p&gt;So, if you are like me and many others in this difficult economy, I can imagine that looking at this graph would be somewhat discouraging. The point at the current point in time isn’t as high on the Y axis as you would like. Looking at this graph with that perspective would very easily make you want to give up on your goals of saving. So, let’s bring the principle that was brought back to my attention last week into the picture to help shift this perspective. It wasn’t explained exactly in these terms this time, but the idea very easily concisely mapped to calculus.&lt;/p&gt;
+
+&lt;p&gt;Simply stated, this shift in perspective should be this: &lt;em&gt;the most important thing in personal development and growth is actually the sign of the derivative of the magnitude of some measurement versus time&lt;/em&gt;. Restated in the context of our example: &lt;em&gt;the most important thing in reaching our savings goals is the sign of the derivative of amount of money over time&lt;/em&gt;. Let me explain this fundamental building block of calculus so this makes sense. Those that understand and remember calculus can skip this next section.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-a-derivative&quot;&gt;What is a derivative?&lt;/h2&gt;
+
+&lt;p&gt;As we study graphs and curves in algebra, an important part of describing them is the slope of the line. Slope has always been described to me as the rise over run. Compare two points on the graph that have a straight line between them. The rise is the vertical distance between the points. The run is the horizontal distance. All in all, slope is an easy concept, as we can map it to things we are familiar with, like a ramp or the slant of a roof.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, most graphs are not like those clean straight lines we studied in algebra. But, the same principles apply. Pick two points and the slope between them is also the rise over run. The difference is this won’t exactly match the curve like in our simpler examples. It will essentially be the average of the curve. With another example that we all understand, think of a plot of position over time. What is the slope of that line? Essentially, it’s the speed you are traveling. That slope is the average speed you were driving between those two positions. But what if you wanted to know how fast you are going at a precise moment in time? This is where the derivative is useful. (It is interesting to note that Newton came up with the concepts of calculus to describe the laws of motion, so this example is very apropos.)&lt;/p&gt;
+
+&lt;p&gt;To get an accurate speed at a point in time, you want the slope line to pass through that exact point. To estimate this, just pick two points on the curve on each side of that point. To get a more accurate estimation for that point, you would move those points closer to the point of measurement. Imagine if you brought those points in so close the slope line only passed through that exact point of measurement. In mathematical jargon, this is the limit as the length of the slope line between those two points approaches zero.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-the-sign-of-the-derivative&quot;&gt;Why the sign of the derivative?&lt;/h2&gt;
+
+&lt;p&gt;Notice when I introduced the concept, I said the important part was the &lt;em&gt;sign&lt;/em&gt; of the derivative. Why is this the important part of the perspective shift? Going back to the example of saving money, the derivative is the rate at which you are saving; “I’m saving $100 per week”. If you are adding money to your account, the slope line is angled upward. If you are withdrawing from the savings, the line is angled downward.&lt;/p&gt;
+
+&lt;p&gt;If you were talking to me about your savings, what if I asked you merely, “Are you progressing toward your savings goal?” I didn’t ask how much you are saving every month, just “are you getting closer to your goal”. To give me the answer, you would just need to know if the derivative of your savings balance at a given time is positive or negative. If positive, yes, you are improving! Yes, you are progressing toward the goal.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-power-of-now&quot;&gt;The Power of Now&lt;/h2&gt;
+
+&lt;p&gt;I’ve recently been begun re-reading &lt;a href=&quot;http://www.amazon.com/Power-Now-Guide-Spiritual-Enlightenment/dp/1577314808/&quot; title=&quot;The Power of Now&quot;&gt;&lt;em&gt;“The Power of Now”&lt;/em&gt;&lt;/a&gt; on suggestion of another wise person in my life. To summarize the ideas of this book and other similar things I’ve read, the key to happiness and peace in life is being in the present moment. The past is gone. The future hasn’t yet happened. All you have is this exact moment. So which direction are you pointed in, at this exact moment? Again, isn’t this the sign of the derivative of the curve, by the limit definition? If the past is gone and the future is not yet, and they are not to be considered for your happiness, a measurement that is a numeric magnitude doesn’t make sense. You can only assign a magnitude in comparison to something else. So, for your happiness, you only need the sign of this derivative.&lt;/p&gt;
+
+&lt;p&gt;The other nice thing about this perspective is that you can then also ignore how high on the Y axis you are at this given moment. You may be at the lowest point you have been in a long while. Or, you may be higher than you’ve ever been. But, if you only care about the sign of the derivative, &lt;em&gt;it doesn’t matter*. It only matters if you are headed upwards or downwards.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A very personal example and application of this principle is found in the heuristics my nephrologist and I use to determine how I am doing. I have chronic kidney disease and renal failure, and had &lt;a href=&quot;http://iam.travishartwell.net/2011/03/11/world-kidney-day-and-a-special-thanks/&quot; title=&quot;World Kidney Day and a special thanks&quot;&gt;a kidney transplant&lt;/a&gt; two and a half years ago. To monitor how well my kidneys are doing, I have regular blood tests, one of which measures the amount of &lt;a href=&quot;http://en.wikipedia.org/wiki/Creatinine&quot; title=&quot;Creatinine&quot;&gt;creatinine&lt;/a&gt; in my blood. It is a by-product of the muscles and primarily filtered by the kidneys, and the larger amount you have in your blood indicates the less effectively your kidneys are working.&lt;/p&gt;
+
+&lt;p&gt;Now, if we merely went by the magnitude of the creatinine levels as an indicator of my health, it would be discouraging and would probably precipitate treatments I don’t necessarily yet need. Additionally, we’re not even sure if we can use the normal guidelines used for adults, as creatinine is relative to muscle mass and mine is definitely different in proportion and amount due to my dwarfism. So how do we interpret my health? Put in these mathematical terms: what is the sign of derivative of my creatinine levels over time? (Okay, this is slightly confusing, as a &lt;em&gt;higher&lt;/em&gt; creatinine level means &lt;em&gt;lower&lt;/em&gt; kidney function. Pretend that the curve is just inverted so the positive/negative will work.) If that derivative is positive or 0, I’m getting better or holding steady. IF it is negative, my kidney function is deteriorating.&lt;/p&gt;
+
+&lt;p&gt;Though I’m at times discouraged by my current levels as they are a reflection of my health, I consistently have to remind myself that what we seek is this derivative to be positive or 0. Holding steady or improving? Good.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-the-sign-of-your-derivative-of-personal-growth-or-how-do-i-make-sure-it-is-positive&quot;&gt;What’s the sign of your derivative of personal growth? Or, how do I make sure it is positive?&lt;/h2&gt;
+
+&lt;p&gt;This, of course, is a whole other blog entry in itself. But as I bring all things back to the spiritual in my life, as my understanding becomes the synthesis of the truth found in all pursuits, in math and science, in philosophy and religion of all persuasions, and even in the arts, I have leave with some quotes that come to mind. One, from among the most significant music of my life. And the other from stories and words of the sacred books of my faith:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Life can hold you down,&lt;br /&gt;
+ When you’re not looking up”&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://mog.com/m/track/30707479&quot; title=&quot;Inside Us All&quot;&gt;Creed, “Inside Us All”&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;When Moses and the Israelites were in the wilderness, they face a plague of fiery serpents. God gives Moses instructions on how those that were bit would find relief:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;And the Lord said unto Moses, Make thee a fiery serpent, and set it
+upon a pole: and it shall come to pass, that every one that is bitten,
+when he looketh upon it, shall live.&lt;/p&gt;
+
+  &lt;p&gt;And Moses made a serpent of brass, and put it upon a pole, and it came
+to pass, that if a serpent had bitten any man, when he beheld the
+serpent of brass, he lived.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://lds.org/scriptures/ot/num/21.8.8-9?lang=eng#7&quot;&gt;Numbers 21:8-9&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The Israelites had to merely lift their gaze to the serpent on the pole, and they were healed.&lt;/p&gt;
+
+&lt;p&gt;To tie it all together, then, to what do I strive to look to, so that my personal growth derivative is positive?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Look unto me in every thought; doubt not, fear not.&lt;/p&gt;
+
+  &lt;p&gt;Behold the wounds which pierced my side, and also the prints of the
+nails in my hands and feet; be faithful, keep my commandments, and ye
+shall inherit the kingdom of heaven. Amen.&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://lds.org/scriptures/dc-testament/dc/6.36.36-37?lang=eng#35&quot;&gt;Doctrine and Covenants 6:36-37&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hope you can find the source to which you look up in your own life, whatever it may be for you, so that your personal growth derivative may be positive. I hope you can make this shift in perspective in your life, as I am striving to do so in mine.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/11/13/the-real-metric-of-personal-growth-the-sign-of-derivative-of-the-magnitude-vs-time-curve/&quot;&gt;The Real Metric of Personal Growth: The Sign of the Derivative of the Magnitude vs. Time Curve&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on November 13, 2011.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Is Love Spoken Here?]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/10/05/is-love-spoken-here/" />
+  <id>http://iam.travishartwell.net/2011/10/05/is-love-spoken-here</id>
+  <published>2011-10-05T04:30:00-06:00</published>
+  <updated>2011-10-05T04:30:00-06:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Tonight while praying and pondering the life I desire, the words to a children’s hymn came to mind. The song is &lt;a href=&quot;https://www.lds.org/music/library/childrens-songbook/love-is-spoken-here?lang=eng&quot;&gt;“Love is Spoken Here”&lt;/a&gt;, and is sung in two parts, one verse by the girls, another by the boys.  A particular phrase I said as I was praying brought the boy’s verse to mind.  I had to go look up the words, as it has been perhaps decades since I have sung it myself.&lt;/p&gt;
+
+&lt;p&gt;Yet again, my heart broke, as I read those lyrics.  Breaking because of what I lack; and words in many ways embody all that I hope and desire for in this life.  It also describes a life I don’t understand, one that I have only caught a few tiny moments of, and a few glimpses in observing others.  But I wonder, is it all just — as I’ve often said – “a Mormon fairy tale”?  Is this life of father and mother kneeling to pray, and together leading the way, and a home filled with love something that can be obtained? I’m not talking about a life free of problems, a marriage completely harmonious, a family where there is no conflict or occasional chaos. But the way I’ve always felt when singing or hearing that song, the way I’ve felt when I’ve been in those homes when I’ve caught that glimpse of heaven, I wonder — is this a potential reality for me?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Mine is a home where ev’ry hour is blessed by the strength of priesthood power&lt;/p&gt;
+
+  &lt;p&gt;With father and mother leading the way&lt;/p&gt;
+
+  &lt;p&gt;Teaching me how to trust and obey&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This isn’t a life of some patriarchal dominance that it could be seen, when you read “strength of priesthood power”. This is a home of a loving, righteous father and mother, with a worthy father leading the way, taking care of the family in all ways — but only with his wife and partner right by his side. The strength that comes from the integrity of that man in his home, with the partnership of his wife, is what guides the home. Together, they teach their children, in love, how to make the choices to live a life of goodness and love.&lt;/p&gt;
+
+&lt;p&gt;To me, this leads me to question. Right now, with my life’s circumstances, I’m struggling to even take care of just myself — physically, emotionally, financially. I’ve seen the quiet, loving responsibility, focus, and care of many of my male friends and family around my age, as they with their spouses raise their families, I am daunted. I wonder how they do it. My heart caves under the thoughts of that responsibility. But as I see the tenderness of my brother, my cousin, or some of my good friends with their child, or as I hear the care, and the love, and the emotion when they talk about their sons and their daughters, it truly is all my heart desires.&lt;/p&gt;
+
+&lt;p&gt;This becomes even more so daunting, as I think of the wonderful relationships they have with their spouses. The kindness, love, honor, and service they give these wonderful women in their lives. As my relationship with my wife and partner has ended, my heart grows heavy as I think of the depth of these feelings and these desires we once had. Again, I question, is life of “father and mother leading the way” even a possibility for me?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;And the things they speak are crystal clear.&lt;/p&gt;
+
+  &lt;p&gt;When love is spoken here&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In a home, where love is taught, but also demonstrated and lived, the lessons of life and goodness are crystal clear. There is no confusion. No hypocrisy or duality. When this is what you’ve lived, seen, and felt; love is part of who you are. But when you’ve lost hope, are scared and confused, when you let the negativity of the world pound at your door — it all falls apart. You lose the ability to keep that love. When that love, peace, and crystal clear truth are part of your life, you move forward. But when that clarity is lost, and the pain enters, this becomes all just a fairy tale.&lt;/p&gt;
+
+&lt;p&gt;I think of some close friends of mine. When I visit their parents’ home, I am more comfortable and at peace than I have been almost anywhere. Sure, their lives are not perfect. My friends haven’t had smooth, perfect lives. But to see the lives they are living now, to see what they have carried on to their own homes, and on to their own families, I am overwhelmed and in awe. But I believe because of the strength of the love and the goodness of their parents, the examples of their home, it has lead to some of what I most think of when I speak of the “fairy tale”.&lt;/p&gt;
+
+&lt;p&gt;But I think, is it real? Can this quiet, hand-in-hand partnership exist? Can it last and weather the storms of life? And, ultimately, can I live the life of love, and together with my partner raise a family of joy and love? I ache and pine for this and wonder, can I become and live this in the circumstances and time I may have left? Or is it lost to me, as I grew overwhelmed in life, in death, and in love?&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/10/05/is-love-spoken-here/&quot;&gt;Is Love Spoken Here?&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on October 05, 2011.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Quintessential Quotes: The Path of Gentle Warriorship]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/08/15/quintessential-quotes-the-path-of-gentle-warriorship/" />
+  <id>http://iam.travishartwell.net/2011/08/15/quintessential-quotes-the-path-of-gentle-warriorship</id>
+  <published>2011-08-15T06:27:00-06:00</published>
+  <updated>2011-08-15T06:27:00-06:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;&lt;em&gt;…If there is anything virtuous, lovely, or of good report or praiseworthy, we seek after these things.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;– &lt;a href=&quot;http://lds.org/scriptures/pgp/a-of-f/1.13?lang=eng#12&quot;&gt;Articles of Faith 1:13&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I’d like to share a few quotes that I have found to combine to describe the path that I am on, as I strive to become &lt;a href=&quot;http://zebrasounds.net/js-love-project/&quot;&gt;a love warrior&lt;/a&gt; or “to connect with the power of our lineage, the lineage of gentle warriorship.” (Chödrön, &lt;a href=&quot;http://www.amazon.com/Start-Where-You-Are-Compassionate/dp/1570628394/&quot;&gt;Start Where You Are&lt;/a&gt;, 49)&lt;/p&gt;
+
+&lt;p&gt;I have written and talked much about the difficult times I have gone through in the last few years. As I walk the path of recovery and healing, I’ve started to have moments where the pain, the sorrow, the joy, or the love have been almost palpable. When others have talked or written about their difficulties, I found myself more and more identifying with those feelings, almost everywhere I turn.&lt;/p&gt;
+
+&lt;h2 id=&quot;sensitive-to-the-undercurrent-of-what-was-going-on-in-every-moment&quot;&gt;Sensitive to the Undercurrent of What Was Going on in Every Moment&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.krop.com/tinafrancis/&quot;&gt;Tina Francis&lt;/a&gt; writes a weekly feature in the online &lt;a href=&quot;http://shelovesmagazine.com/&quot;&gt;SheLoves Magazine&lt;/a&gt;. This week she wrote about become honest with yourself and the big leap and risk that often is. As she describes the process of coming to admit that she really is a photographer instead of just “likes to take pictures”, Tina recounts coming to a place in her life of great sensitivity after a difficult break-up:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;..I remember the year well because it marked one year since
+“The-epic-breakup-of-2007″ that crushed my soul. The first and only
+boy I ever loved, broke my heart.&lt;/p&gt;
+
+  &lt;p&gt;I was committed to “the pain,” a.k.a. the grieving process. I think I
+confused it with a part-time job. I could have paid off a killer house
+in the Hamptons, if there were an hourly wage for sobbing
+uncontrollably into bath towels.&lt;/p&gt;
+
+  &lt;p&gt;George Bernard Shaw says, “When your heart is broken, your boats are
+burned: nothing matters any more. It is the end of happiness and the
+beginning of peace.” In that place where nothing matters, the end of
+my happiness if you will, something fascinating happened. I let go. In
+that place where I had nothing to lose and everything to gain, I saw a
+glimmer of God’s peace.&lt;/p&gt;
+
+  &lt;p&gt;What does my breakup have to do with taking pictures you ask?
+Everything.&lt;/p&gt;
+
+  &lt;p&gt;When the thick fog of heartache finally lifted, I had a new set of
+eyes. I went into the world like Bambi, unsteady and awestruck by the
+beauty that surrounded me.&lt;/p&gt;
+
+  &lt;p&gt;I didn’t see the obvious, I saw the subtext.\
+ I didn’t see milestones, I saw epic stories of sacrifice.\
+ I didn’t see people, I saw energy, joy and love.&lt;/p&gt;
+
+  &lt;p&gt;I suddenly had a superpower, “Emotional X-ray Vision” which allowed me
+to be sensitive to the undercurrent of what was going on in every
+moment.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://shelovesmagazine.com/2011/tgif-im-coming-out-and-i-want-the-world-to-know/&quot;&gt;TGIF: I’m Coming Out and I Want the World to
+Know&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;strong&gt;As of 18 June 2015, the above article doesn’t exist, unforunately.&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;p&gt;This beautiful passage (I hope you don’t mind me quoting this much Teen), connected with me at a very deep level. I think I’m still traveling through that place she describes as the end of happiness, but I feel that I have seen glimpses of those moments of being sensitive to the undercurrent. I feel, and I must express.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-stepping-stone-for-working-with-the-world&quot;&gt;A Stepping Stone for Working With The World&lt;/h2&gt;
+
+&lt;p&gt;Then, yesterday I was reading something that jumped out as describing what Tina went through (perhaps subconsciously) through her grieving process. Pema Chödrön, a wonderful, humble Buddhist teacher, wrote:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This approach is very different from practicing affirmations, which
+has been a popular thing in some circles. Affirmations are like
+screaming that you’re okay in order to overcome this whisper that
+you’re not. That’s a big contrast to actually uncovering the whisper,
+realizing that it’s passing memory, and moving closer to all those
+fears and all those edgy feelings that maybe you’re not okay. Well, no
+big deal. None of us is okay and all of us are fine. It’s not just one
+way. We are walking, talking paradoxes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;(Chödrön, 19)&lt;/p&gt;
+
+&lt;p&gt;I think Tina went through this as she let go as she described, as she was committed to the grieving process. In the end, it leads to something that Ani Pema later writes:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The main thing is to really get in touch with fixation and the power
+of klesha [pain] activity in yourself. This makes other people’s
+situations completely accessible and real to you. Then, when it
+becomes real and vivid, always remember to extend it out. Let your own
+experience be a stepping stone for working with the world.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;(Chödrön, 43)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Let your own experience be a stepping stone for working with the world.&lt;/em&gt; The experience that Tina went through all the sudden made her sensitive to all around her and all that she was in. As I said before, I have a glimpse of this, and I think this idea and practice is the heart of the path that I am on.&lt;/p&gt;
+
+&lt;h2 id=&quot;be-heart-well&quot;&gt;Be Heart Well&lt;/h2&gt;
+
+&lt;p&gt;Sometimes it takes a broken heart (and not necessarily the “he/she broke my heart” type, but any of the pain and sorrows and grief that comes through life) to prepare you for these things. It is only in the cracks, fissures, and deep crevasses of a heart that has been broken that there becomes room and openness enough to contain the love that the world needs. As I walk my path, as I learn to become honest with myself, I wish to have the pain and sorrow and loss I’ve been through be my guide in being a heart-warrior. Say my full name — (Travis B. Hartwell which sounds like Travis, Be Heart Well — and this is what I am meant to do and be.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/08/15/quintessential-quotes-the-path-of-gentle-warriorship/&quot;&gt;Quintessential Quotes: The Path of Gentle Warriorship&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on August 15, 2011.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[34 things about me, as an introduction]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/07/09/34-things-about-me-as-an-introduction/" />
+  <id>http://iam.travishartwell.net/2011/07/09/34-things-about-me-as-an-introduction</id>
+  <published>2011-07-09T02:45:00-06:00</published>
+  <updated>2011-07-09T02:45:00-06:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I’ve been inspired by &lt;a href=&quot;http://www.themiddlefingerproject.org/the-67-emotions-of-online-success-my-story/&quot;&gt;Ashley&lt;/a&gt;, &lt;a href=&quot;http://www.lifeaftercollege.org/blog/about-jenny-blake/100-things-about-me/&quot;&gt;Jenny&lt;/a&gt;, and &lt;a href=&quot;http://itstartswith.com/2011/07/27-things-you-dont-know-about-me-or-hello/&quot;&gt;Sarah’s&lt;/a&gt; blog posts about themselves that I feel the need to write more about myself, especially as an introduction to many of the new people I am meeting during this point of my life.  I’m not quite ready to talk about some of life’s lessons and the emotions that I have gone through the way they did, but these are fun stories and things that help define me.  Chosing 32 items like Sarah did was an attractive idea (it is 2^5, after all, and as a programmer that is significant to me), but I kept going and decided to stop at 34, my current age:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;I was born with 7 fingers on each hand and 6 toes on each foot.  The extra digits were removed in 3 surgeries between the ages of 18 months and 2 years old, so I don’t remember them.  My parents say they were fully functional and formed as the others.  If I have read some news reports right, I probably could have been in the Guinness Book of World Records for the most fingers and toes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;My first steps were not until I was 22 months old, and they were not walking, but running.  I have valgus of the ankles which makes it hard for me to put weight on my feet and this wasn’t discovered until that time.  I was fitted with orthotics at that time and when my mother set me down after putting them on, I took off running.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I have had at least 16 major surgeries (I don’t &lt;em&gt;think&lt;/em&gt; I’m forgetting any) in my life, with my first at six weeks old and the most recent being this last December.  The most significant to me is my kidney transplant that I had 2 years ago.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The donor of my transplant kidney is my (now former) mother-in-law.  She’s an amazing woman and to this day still tells me she never regrets it for a moment.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Because of my kidney transplant and issues relating to that, I currently am taking 27 pills a day.  It changes from week to week, depending on what my needs are.  I’ve heard plenty of jokes about my pharmacy when people see all of my pill bottles.  The last time I had to spend some time in the hospital, I was the one on my wing that had the most medication — even more than the 90 year olds.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I discovered four years ago that I have retinitis pigmentosa and that I was slowly losing my vision.  It has progressed enough that I have trouble seeing at night and can no longer drive at night.  The specialist that I’ve been to says I could likely be completely blind in about a decade.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I am only 4’6″ and probably have been that height since I was 15 or so.  I am the only one in my family (immediate and extended) like this.  My older brother is 6’4″ and my younger sister is 5’10″.  It was very weird for me in college when one of my good friends was shorter than me.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I have always joked about having a “token tall person” to take with me shopping to reach the things that I cannot.  In college, one of my good friends was 4’11″ and she was my token tall person for a while.  My ex-wife was 4’10″ and was the tall one in our relationship as well.  I doubt they ever thought they would be useful for their great height.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I was so oblivious to and had given up on dating that when my ex-wife asked me on our first date, I didn’t even realize she was asking me out.  I’m pretty sure I even said, “Wait, did you just ask me on a date?”  Whoops.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I had football jersey #90 in high school.  I did.  I really didn’t play, I just spent all of my time with the members of the team and they made me an honorary member at the end of the season my Senior year.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Very much like my father (and, from my memories of him, my grandfather), when I find something that works for me, I stick with it.  My Dad (and my grandfather) dressed in the same style (and often brand) of clothing as long as I remember.  He only drives one brand of truck.  He has mostly only driven one brand of car.  Me?  I have worn the same type of shoe (Dr. Marten’s) almost every single day since I was 19.  Of the four cars I have owned and been the primary driver of, the first two were Chevy Cavaliers and the next two are both Honda Civics.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Even though many in my extended family (including my grandfather) were and are gifted horsemen, the last time I was on a horse, I lasted barely longer than 8 seconds.  My feet didn’t reach the stirrups (see point #7) and as the horse was trotting, it was hard not to let them hit the horse’s side.  It thought I was telling it to go faster.  It went faster, I was bouncing up and down.  I eventually was holding onto the saddle horn with all my might and hanging off the side of the horse.  Then I was on the ground.  Papa would have been proud, though.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Falling and hitting my head seems to be a common theme in my life.  In second grade, I was bumped by a classmate and fell and hit my head on the corner of the platform they made for my desk.  In third grade, I fell off the top of the tallest slide in the playground at school.  I remember climbing up the ladder to the slide and then being at home, in bed, and my parents looking down at me.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I have been in five car wrecks as a driver (and one as a passenger as an infant).  Two were my fault, and the other three were not my fault or unavoidable given the situation.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I am an epic napper.  I’ve been known to sleep in the craziest places and in the craziest conditions.  My freshman year of college, I fell asleep at the super bowl party my campus residence hall put on.  Often through the last couple years of college, I would fall asleep with loud music blaring out from my computer.  There was something comforting about that.  I did that a bit in the last year during my time off of work to deal with health issues.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I grew up in a small town in the middle of nowhere Idaho.  I was used to knowing about everyone and I think that translated into me being more open in college and making many more friends.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Some of the people I consider to be my best friends I have never met in person.  I have been interacting with people online since 1994 and there are some people I’ve been talking with now for at least a dozen years, and one friend I first met online in 1995.  Some I have later met, but most I only know them but my interactions with them on IRC, Twitter, etc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I am a very touchy-feely kind of person and love hugs.  In college, I was well known around campus and nearly every girl I knew would give me a hug when I saw her.  My roommates were always confused at how I did that.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Until recently, I’m as apolitical as they come and not really one to be in the spotlight.  But, in college, I ran for the office of Academic Vice President of the university student government.  My slogan was “Life is short, so is Travis.”  I didn’t make it past the primaries, but I got a significant number of write-in votes (which is interesting because the final race was won by 2 votes).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;During the last couple of years of college, a very significant part of my life was country swing dancing.  I think I often surprised people because I could easily dance with girls anywhere from around my height to even six feet tall (that is, if the girl trusted me to lead).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I took piano lessons for around 9 years.  I hated practicing, but found I was good at sight reading.  The last few years of lessons, I literally would sight read a piece and pass it off with the teacher.  I still play in church, but I’m certainly not as talented as I should be for playing this long.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I absolutely love loud music.  I love to feel the bass.  I love to feel the music in my bones, in my heart.  I’ve always got the music cranked in my car, and when I’m home alone, I have the music turned up loud.  It doesn’t matter what it is — from hard rock, to pop, to classical symphonies, I have it cranked.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I absolutely love music in general.  It really does speak to my soul.  I think some of my music choices would surprise those who don’t know me outside of certain aspects of my life.  Eminem, Green Day, and some other alternative and hard rock bands are typical on my playlists.  At times, certain music has just spoke to me, and I have grasped onto it and will forever listen to it.  A lot of times, my love of music becomes even greater as I learn the stories behind the songs or about the artists.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;My all-time favorite band is Creed.  I think the thing that actually got me interested in them as a band was watching the VH1 “Behind the Music” special on them.  (I &lt;em&gt;love&lt;/em&gt; that show.  There’s something about the cliched “Rise, then fall, then re-ascension of such-and-such pop artist” in that narrator’s voice that fascinates me.)  There was something about Scott Stapp’s story that I identified with and I actually listened to the lyrics.  It just touched me and for a period of a few years, I know I listened to every song they had released thus far every day at least once.  I’ve been to two of their concerts, and got to meet them 2 years ago.  I was able to tell them how much their music helped me through much of the rough times of my life.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Even though I know very little Spanish, I love listening to two Latin Pop artists — Mana and Shakira.  I had many friends in college that spoke Spanish and it was from them that I learned to enjoy that music.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In contrast to some of my music choices, I actually absolutely love shows for children and teens.  When I’ve spent time in the hospital and have had not much else other than watching TV to do, I’ve spent most of my time watching Nickelodean and the Disney Channel.  My cousin’s 2 year old was amazed when I knew who Perry the Platypus was that was on his shirt.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;My all-time favorite TV show is probably Charmed.  Like many other things in my life, I think I must have randomly saw an episode that struck some cord with me emotionally (and, of course, it definitely helped that the sisters are extremely attractive) that I became obsessed with the show.  I didn’t start watching until probably the 6th season, and now have all of the episodes.  Now, I follow Alyssa, Holly, and Rose on Twitter and now I’m even a bigger fan as I see their personalities and genuineness.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As much as there are certain TV show I love, and as much as I love having access to the Internet, the 2 years I lived alone in my own apartment after first moving to Austin, I did not have TV or Internet at home.  Since moving in with my current roommate, I haven’t had cable, and once again I find that I haven’t missed it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;For the longest time, I absolutely swore up and down I would never have a cell phone.  I thought my sister and my father were just tied to work 24/7 because of their phones and I absolutely did not (and still don’t) want that.  I ate my words though when I couldn’t resist the siren song of an awesome gadget and have been hooked ever since.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Within probably a three-month span towards the end of 1999, I started using three technologies that have significantly affected my career and the way I use a computer.  It was the Debian Linux distribution, the Python programming language, and the Emacs text editor.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As a child, I was obsessed with astronomy, ancient history (particularly of ancient Egypt), and the paranormal (I read books on UFOs, Bigfoot, mythical creatures, etc).  It has only been recently that I’ve regained that interest and admitted it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As an adult, that obsession has spread to things like yoga, vegetarianism and veganism, alternative medicine, mindfulness and meditation, etc.  It is definitely far from the path of what I was exposed to growing up.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A recent new obsession has been psychology and neuroscience.  I’m fascinated by the human brain and how it works and how plastic it is and things can change.  It has helped me understand the circumstances of my life and helps give me hope for the future.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;One of my greatest weaknesses is how much I like programmer fuel aka Mt. Dew.  Especially when I work somewhere that offers soda for the employees, it is hard to not drink it all the time.  Something ironic was that I was given a t-shirt with the Mt. Dew logo on it that I wore home from the hospital when I was released after having my kidney transplant.  Whoops.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I hope that helps you get to know me a little better and you don’t think I’m too weird. :)&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/07/09/34-things-about-me-as-an-introduction/&quot;&gt;34 things about me, as an introduction&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on July 09, 2011.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Flow]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/07/06/flow/" />
+  <id>http://iam.travishartwell.net/2011/07/06/flow</id>
+  <published>2011-07-06T02:57:00-06:00</published>
+  <updated>2011-07-06T02:57:00-06:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;In two previous posts, I wrote about ideas that &lt;a href=&quot;http://iam.travishartwell.net/2011/06/26/resonance/&quot;&gt;resonate&lt;/a&gt; with me and also this state of being that I got into while &lt;a href=&quot;http://iam.travishartwell.net/2011/06/17/driving-in-my-car/&quot;&gt;driving my new car&lt;/a&gt;.  Tonight I watched a TEDx video from Leone Ross, an author.  She really spoke to me, as someone who is striving to find himself in creativity and creation.  But, in particular, is her last point, which I have linked to it here (just a couple minutes for the part I’m referring to):&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/j3MsWj8UigU&quot; frameborder=&quot;0&quot;&gt; &lt;/iframe&gt;
+
+&lt;p&gt;Flow is something that &lt;a href=&quot;http://www.amazon.com/Mihaly-Csikszentmihalyi/e/B000AQ1KVM/ref=ntt_athr_dp_pel_1&quot;&gt;Mihaly Csikszentmihalyi&lt;/a&gt; has &lt;a href=&quot;http://www.amazon.com/Flow-Psychology-Experience-Mihaly-Csikszentmihalyi/dp/0061339202&quot;&gt;written about&lt;/a&gt; extensively. I think his definition matches very closely with her description in the above video. One of the things I like most about the way she describes the experience of flow is that it comes from simple repitition, something that you have done over and over again. I think this matches up very well with what Malcolm Gladwell talks about in &lt;a href=&quot;http://www.amazon.com/Outliers-Story-Success-Malcolm-Gladwell/dp/0316017930&quot;&gt;Outliers&lt;/a&gt; when he talks about those that are most successful it is because they’ve done something for 10,000 hours. I think it also fits with what Galwey writes about in &lt;a href=&quot;http://www.amazon.com/Inner-Game-Tennis-Classic-Performance/dp/0679778314&quot;&gt;The Inner Game of Tennis&lt;/a&gt;. He talks about getting to the point in your tennis game where you aren’t thinking about things, but your swing just comes from knowing how a good swing feels, and just doing it.&lt;/p&gt;
+
+&lt;p&gt;I could come up with a ton more examples from sports or creative endeavors.  Regardless, this video is just another beautiful reminder of a concept that keeps getting hammered home to me.  Repitition.  Practice.  Consistent practice.  It’s something I’m trying to apply to all important areas of my life.  This resonates with me, and I take it a little bit more as part of me.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/07/06/flow/&quot;&gt;Flow&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on July 06, 2011.&lt;/p&gt;
   </content>
 </entry>
 
