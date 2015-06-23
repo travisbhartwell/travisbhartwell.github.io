@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://iam.travishartwell.net/feed.xml" />
 <link rel="alternate" type="text/html" href="http://iam.travishartwell.net" />
-<updated>2015-06-23T03:37:17+00:00</updated>
+<updated>2015-06-22T21:44:54-06:00</updated>
 <id>http://iam.travishartwell.net/</id>
 <author>
   <name>Travis B. Hartwell</name>
@@ -17,8 +17,8 @@
   <title type="html"><![CDATA[nix-shell and Shebang Lines]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2015/06/17/nix-shell-shebang/" />
   <id>http://iam.travishartwell.net/2015/06/17/nix-shell-shebang</id>
-  <updated>2015-06-23 03:00:00 +0000T00:00:00-00:00</updated>
-  <published>2015-06-17T14:00:00+00:00</published>
+  <updated>2015-06-22 21:00:00 -0600T00:00:00-00:00</updated>
+  <published>2015-06-17T08:00:00-06:00</published>
   
   <author>
     <name>Travis B. Hartwell</name>
@@ -204,10 +204,10 @@ cleaned up and made my examples more consistent.&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[My Life is Unusual]]></title>
- <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2014/09/19/my-life-is-unusual/" />
-  <id>http://iam.travishartwell.net/2014/09/19/my-life-is-unusual</id>
-  <published>2014-09-19T03:15:00+00:00</published>
-  <updated>2014-09-19T03:15:00+00:00</updated>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2014/09/18/my-life-is-unusual/" />
+  <id>http://iam.travishartwell.net/2014/09/18/my-life-is-unusual</id>
+  <published>2014-09-18T21:15:00-06:00</published>
+  <updated>2014-09-18T21:15:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -246,7 +246,7 @@ cleaned up and made my examples more consistent.&lt;/p&gt;
 
 &lt;p&gt;I know that my experience is not like everyone else’s. Sometimes, perhaps there’s a twinge of sadness when I am reminded of that. And I know that sometimes others may experience something similar. A conversation may remind them of something they lack that they desire. Or how simply they are different. I know I have to be sensitive to others. And to remember, my views are through the lens of my experience, no matter how “normal” or “non-normal” it is.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2014/09/19/my-life-is-unusual/&quot;&gt;My Life is Unusual&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on September 19, 2014.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2014/09/18/my-life-is-unusual/&quot;&gt;My Life is Unusual&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on September 18, 2014.&lt;/p&gt;
   </content>
 </entry>
 
@@ -255,8 +255,8 @@ cleaned up and made my examples more consistent.&lt;/p&gt;
   <title type="html"><![CDATA[Rise Up and Walk]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2014/08/18/rise-up-and-walk/" />
   <id>http://iam.travishartwell.net/2014/08/18/rise-up-and-walk</id>
-  <published>2014-08-18T18:58:00+00:00</published>
-  <updated>2014-08-18T18:58:00+00:00</updated>
+  <published>2014-08-18T12:58:00-06:00</published>
+  <updated>2014-08-18T12:58:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -306,8 +306,8 @@ cleaned up and made my examples more consistent.&lt;/p&gt;
   <title type="html"><![CDATA[A Poem: Reflected Back]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/06/08/a-poem-reflected-back/" />
   <id>http://iam.travishartwell.net/2012/06/08/a-poem-reflected-back</id>
-  <published>2012-06-08T12:12:00+00:00</published>
-  <updated>2012-06-08T12:12:00+00:00</updated>
+  <published>2012-06-08T06:12:00-06:00</published>
+  <updated>2012-06-08T06:12:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -352,8 +352,8 @@ won’t be reflected back to me, but reality.  &lt;/p&gt;
   <title type="html"><![CDATA[Learning Lessons]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/06/07/learning-lessons/" />
   <id>http://iam.travishartwell.net/2012/06/07/learning-lessons</id>
-  <published>2012-06-07T23:21:00+00:00</published>
-  <updated>2012-06-07T23:21:00+00:00</updated>
+  <published>2012-06-07T17:21:00-06:00</published>
+  <updated>2012-06-07T17:21:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -385,8 +385,8 @@ won’t be reflected back to me, but reality.  &lt;/p&gt;
   <title type="html"><![CDATA[No Apologies, or, provoco et non transverto]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/02/24/no-apologies-or-provoco-et-non-transverto/" />
   <id>http://iam.travishartwell.net/2012/02/24/no-apologies-or-provoco-et-non-transverto</id>
-  <published>2012-02-24T08:42:00+00:00</published>
-  <updated>2012-02-24T08:42:00+00:00</updated>
+  <published>2012-02-24T01:42:00-07:00</published>
+  <updated>2012-02-24T01:42:00-07:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -471,10 +471,10 @@ Create&lt;/a&gt;&lt;/li&gt;
 
 <entry>
   <title type="html"><![CDATA[Questions Asked As I Lay In a Hospital Bed]]></title>
- <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/02/14/questions-asked-as-i-lay-in-a-hospital-bed/" />
-  <id>http://iam.travishartwell.net/2012/02/14/questions-asked-as-i-lay-in-a-hospital-bed</id>
-  <published>2012-02-14T04:07:00+00:00</published>
-  <updated>2012-02-14T04:07:00+00:00</updated>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/02/13/questions-asked-as-i-lay-in-a-hospital-bed/" />
+  <id>http://iam.travishartwell.net/2012/02/13/questions-asked-as-i-lay-in-a-hospital-bed</id>
+  <published>2012-02-13T21:07:00-07:00</published>
+  <updated>2012-02-13T21:07:00-07:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -511,7 +511,7 @@ Create&lt;/a&gt;&lt;/li&gt;
 
 &lt;p&gt;I don’t know what happened to my fellow patient. Perhaps he soon passed and received the relief of body and soul he sought so desperately in the night. But the feeling and consequence of his words continue with me to this day, and connect me to my own questions, as I ask, “do I want to try again?” I’m just glad I was not faced with those questions back when I was nearly 8. The weight of just hearing another ask them was soul-searing enough.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2012/02/14/questions-asked-as-i-lay-in-a-hospital-bed/&quot;&gt;Questions Asked As I Lay In a Hospital Bed&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on February 14, 2012.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2012/02/13/questions-asked-as-i-lay-in-a-hospital-bed/&quot;&gt;Questions Asked As I Lay In a Hospital Bed&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on February 13, 2012.&lt;/p&gt;
   </content>
 </entry>
 
@@ -520,8 +520,8 @@ Create&lt;/a&gt;&lt;/li&gt;
   <title type="html"><![CDATA[Mid-Life, Not so Much]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/02/10/midlife-not-so-much/" />
   <id>http://iam.travishartwell.net/2012/02/10/midlife-not-so-much</id>
-  <published>2012-02-10T17:22:00+00:00</published>
-  <updated>2012-02-10T17:22:00+00:00</updated>
+  <published>2012-02-10T10:22:00-07:00</published>
+  <updated>2012-02-10T10:22:00-07:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -611,8 +611,8 @@ To fight… ‘Cause I’m,  &lt;/p&gt;
   <title type="html"><![CDATA[The Real Metric of Personal Growth: The Sign of the Derivative of the Magnitude vs. Time Curve]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/11/13/the-real-metric-of-personal-growth-the-sign-of-derivative-of-the-magnitude-vs-time-curve/" />
   <id>http://iam.travishartwell.net/2011/11/13/the-real-metric-of-personal-growth-the-sign-of-derivative-of-the-magnitude-vs-time-curve</id>
-  <published>2011-11-13T14:01:00+00:00</published>
-  <updated>2011-11-13T14:01:00+00:00</updated>
+  <published>2011-11-13T07:01:00-07:00</published>
+  <updated>2011-11-13T07:01:00-07:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -711,8 +711,8 @@ shall inherit the kingdom of heaven. Amen.&lt;/p&gt;
   <title type="html"><![CDATA[Is Love Spoken Here?]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/10/05/is-love-spoken-here/" />
   <id>http://iam.travishartwell.net/2011/10/05/is-love-spoken-here</id>
-  <published>2011-10-05T10:30:00+00:00</published>
-  <updated>2011-10-05T10:30:00+00:00</updated>
+  <published>2011-10-05T04:30:00-06:00</published>
+  <updated>2011-10-05T04:30:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -758,8 +758,8 @@ shall inherit the kingdom of heaven. Amen.&lt;/p&gt;
   <title type="html"><![CDATA[Quintessential Quotes: The Path of Gentle Warriorship]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/08/15/quintessential-quotes-the-path-of-gentle-warriorship/" />
   <id>http://iam.travishartwell.net/2011/08/15/quintessential-quotes-the-path-of-gentle-warriorship</id>
-  <published>2011-08-15T11:27:00+00:00</published>
-  <updated>2011-08-15T11:27:00+00:00</updated>
+  <published>2011-08-15T05:27:00-06:00</published>
+  <updated>2011-08-15T05:27:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -862,8 +862,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[34 things about me, as an introduction]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/07/09/34-things-about-me-as-an-introduction/" />
   <id>http://iam.travishartwell.net/2011/07/09/34-things-about-me-as-an-introduction</id>
-  <published>2011-07-09T07:45:00+00:00</published>
-  <updated>2011-07-09T07:45:00+00:00</updated>
+  <published>2011-07-09T01:45:00-06:00</published>
+  <updated>2011-07-09T01:45:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -988,8 +988,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Flow]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/07/06/flow/" />
   <id>http://iam.travishartwell.net/2011/07/06/flow</id>
-  <published>2011-07-06T08:57:00+00:00</published>
-  <updated>2011-07-06T08:57:00+00:00</updated>
+  <published>2011-07-06T02:57:00-06:00</published>
+  <updated>2011-07-06T02:57:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1013,8 +1013,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[I Believe and This is Me]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/07/04/i-believe-and-this-is-me/" />
   <id>http://iam.travishartwell.net/2011/07/04/i-believe-and-this-is-me</id>
-  <published>2011-07-04T07:05:00+00:00</published>
-  <updated>2011-07-04T07:05:00+00:00</updated>
+  <published>2011-07-04T01:05:00-06:00</published>
+  <updated>2011-07-04T01:05:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1064,8 +1064,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Resonance]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/26/resonance/" />
   <id>http://iam.travishartwell.net/2011/06/26/resonance</id>
-  <published>2011-06-26T09:46:00+00:00</published>
-  <updated>2011-06-26T09:46:00+00:00</updated>
+  <published>2011-06-26T03:46:00-06:00</published>
+  <updated>2011-06-26T03:46:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1109,10 +1109,10 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[Driving, in my car]]></title>
- <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/18/driving-in-my-car/" />
-  <id>http://iam.travishartwell.net/2011/06/18/driving-in-my-car</id>
-  <published>2011-06-18T00:20:00+00:00</published>
-  <updated>2011-06-18T00:20:00+00:00</updated>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/17/driving-in-my-car/" />
+  <id>http://iam.travishartwell.net/2011/06/17/driving-in-my-car</id>
+  <published>2011-06-17T18:20:00-06:00</published>
+  <updated>2011-06-17T18:20:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1131,7 +1131,7 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
 
 &lt;p&gt;I treasure those moments.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/06/18/driving-in-my-car/&quot;&gt;Driving, in my car&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 18, 2011.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/06/17/driving-in-my-car/&quot;&gt;Driving, in my car&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 17, 2011.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1140,8 +1140,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Just a small act of kindness]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/16/just-a-small-act-of-kindness/" />
   <id>http://iam.travishartwell.net/2011/06/16/just-a-small-act-of-kindness</id>
-  <published>2011-06-16T07:45:00+00:00</published>
-  <updated>2011-06-16T07:45:00+00:00</updated>
+  <published>2011-06-16T01:45:00-06:00</published>
+  <updated>2011-06-16T01:45:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1167,8 +1167,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Kidney Raffle — A Worthy Cause and a chance to win some awesome prizes]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/08/kidney-raffle-a-worthy-cause-and-a-chance-to-win-some-awesome-prizes/" />
   <id>http://iam.travishartwell.net/2011/06/08/kidney-raffle-a-worthy-cause-and-a-chance-to-win-some-awesome-prizes</id>
-  <published>2011-06-08T18:27:00+00:00</published>
-  <updated>2011-06-08T18:27:00+00:00</updated>
+  <published>2011-06-08T12:27:00-06:00</published>
+  <updated>2011-06-08T12:27:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1207,8 +1207,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Susan Lim: Transplant cells, not organs]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/04/17/susan-lim-transplant-cells-not-organs/" />
   <id>http://iam.travishartwell.net/2011/04/17/susan-lim-transplant-cells-not-organs</id>
-  <published>2011-04-17T10:36:00+00:00</published>
-  <updated>2011-04-17T10:36:00+00:00</updated>
+  <published>2011-04-17T04:36:00-06:00</published>
+  <updated>2011-04-17T04:36:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1238,8 +1238,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Life as a Kidney Transplant Patient (Part 1 -- Medication)]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/03/13/life-as-a-kidney-transplant-patient-part-1-medication/" />
   <id>http://iam.travishartwell.net/2011/03/13/life-as-a-kidney-transplant-patient-part-1-medication</id>
-  <published>2011-03-13T15:54:00+00:00</published>
-  <updated>2011-03-13T15:54:00+00:00</updated>
+  <published>2011-03-13T09:54:00-06:00</published>
+  <updated>2011-03-13T09:54:00-06:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
