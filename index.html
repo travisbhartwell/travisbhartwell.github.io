@@ -145,7 +145,7 @@
   <header>
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2015-06-17T08:00:00-06:00"><a href="http://iam.travishartwell.net/2015/06/17/nix-shell-shebang/">June 17, 2015</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2015-06-17T14:00:00+00:00"><a href="http://iam.travishartwell.net/2015/06/17/nix-shell-shebang/">June 17, 2015</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
       
     </div><!-- /.entry-meta -->
     
@@ -164,15 +164,67 @@ From the release notes:</p>
 <p>They followed with an example that used GHC’s <code>runhaskell</code> to execute Haskell
 code using libraries that had been specified in the shebang line.
 Unfortunately, this specific example doesn’t work, as it isn’t sufficient
-information for Haskell to find the Network.HTTP library.</p>
+information for Haskell to find the Network.HTTP library.  But this notwithstanding,
+it is still an interesting change that I have found useful.</p>
 
-<p>But this notwithstanding, it is still an interesting change that I have found
-useful.  To use it, start your scripts with two lines similar to this:</p>
+<h2 id="why">Why?</h2>
+
+<p>First, why would you use this?  Several reasons.  As quoted above, your scripts
+can auto-fetch their own dependencies.  This makes sharing and deploying scripts
+to other Nix-based systems easy.  No having to remember exactly everything that
+is needed.  The script will fetch and install whatever it needs.  If the system
+already has the package installed, Nix will just use that.</p>
+
+<p>Second, I use this (as is one of my big motivations for Nix in general) to
+isolate things.  I have the minimum set of packages installed to keep my system
+running and support the applications I run regularly.  Then particularly for
+project specific scripts – things not useful outside the context of the
+project, or may have dependencies separate from what the system in general might
+use – I like using <code>nix-shell</code> scripts.  I don’t have to install all of the
+libraries (gems, npm packages, etc) needed and clutter up my system or <code>$HOME</code>.</p>
+
+<h2 id="using-nix-shell-in-a-shebang-line">Using nix-shell in a Shebang Line</h2>
+
+<p>To use it, start your scripts with two lines similar to this:</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#! /usr/bin/env nix-shell</span>
 <span class="c">#! nix-shell -i python3 -p python3 python34Packages.pygobject3 libnotify gobjectIntrospection gdk_pixbuf</span></code></pre></div>
 
-<p>The <code>-i</code> parameter to nix-shell tells it which interpreter to use when executing
+<p>This is a little different than some other shebang lines you might have seen
+before.  First, why use <code>/usr/bin/env</code> instead of calling <code>nix-shell</code> directly?
+As explained in the answers to this
+<a href="http://unix.stackexchange.com/questions/29608/why-is-it-better-to-use-usr-bin-env-name-instead-of-path-to-name-as-my">Unix StackExchange question</a>,
+this allows the script to be more portable.  On NixOS systems, you could
+generally reference <code>/run/current-system/sw/bin/nix-shell</code> as the <code>nix-shell</code>
+path.  In fact, in previous edits of this post I used that in some of my
+examples.  But if you wanted to share this with a system that was using Nix on
+top of another distribution or OS, that wouldn’t work.</p>
+
+<p>Related, the second line is needed to get around a potential limitation
+(depending on the system you are running on) in the way that interpreted scripts
+are launched.  Quoting the <em>Interpreter scripts</em> paragraphs under the <em>NOTES</em>
+section of the
+<a href="http://man7.org/linux/man-pages/man2/execve.2.html">execve(2) man page</a>: </p>
+
+<blockquote>
+  <p>A maximum line length of 127 characters is allowed for the first line in an
+interpreter scripts. </p>
+
+  <p>The semantics of the optional-arg argument of an interpreter script vary
+across implementations.  On Linux, the entire string following the interpreter
+name is passed as a single argument to the interpreter, and this string can
+include white space.  However, behavior differs on some other systems.  Some
+systems use the first white space to terminate optional-arg. On  some
+systems, an interpreter script can have multiple arguments, and white spaces
+in optional-arg are used to delimit the arguments.</p>
+</blockquote>
+
+<p>So, the second line allows passing multiple arguments to <code>nix-shell</code>, allowing
+for spaces in those arguments, and dealing with a potential line-length limit.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>The <code>-i</code> parameter to <code>nix-shell</code> tells it which interpreter to use when executing
 the script.  Often, it is from one of the dependencies, such as in the above
 example.  The <code>-p</code> parameter gives one or more dependencies to be used. After
 the above lines follows the script (shamelessly borrowed from the
@@ -191,8 +243,8 @@ declared dependencies.  I needed to write a wrapper for some NodeJS scripts I
 had installed in the node_modules directory of a project I am working on.  I
 didn’t want Node installed globally, so I did this:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/run/current-system/sw/bin/env nix-shell</span>
-<span class="c">#!nix-shell -i bash -p nodejs</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#! /usr/bin/env nix-shell</span>
+<span class="c">#! nix-shell -i bash -p nodejs</span>
 
 <span class="nb">readonly </span><span class="nv">BIN_DIR</span><span class="o">=</span><span class="s2">&quot;$(cd -P &quot;</span><span class="k">$(</span>dirname <span class="s2">&quot;${BASH_SOURCE[0]}&quot;</span><span class="k">)</span><span class="s2">&quot; &amp;&amp; pwd)&quot;</span>
 <span class="nb">readonly </span><span class="nv">CMD</span><span class="o">=</span><span class="s2">&quot;$(basename ${BASH_SOURCE[0]/%-wrapper/})&quot;</span>
@@ -204,11 +256,11 @@ this file, with the name <code>program-wrapper</code>, for example, <code>tern-w
 <a href="http://ternjs.net/">tern</a>.  Notice my script doesn’t directly call nodejs,
 though the underlying script it calls does.</p>
 
-<p>One more example.  I wrote the following script to render this document as I was
+<p>I wrote the following script to render this document as I was
 writing it to check the way it looked in HTML:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/run/current-system/sw/bin/env nix-shell</span>
-<span class="c">#!nix-shell -i bash -p inotifyTools pandoc</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#! /usr/bin/env nix-shell</span>
+<span class="c">#! nix-shell -i bash -p inotifyTools pandoc</span>
 
 <span class="nb">readonly </span><span class="nv">FILE</span><span class="o">=</span><span class="s2">&quot;$*&quot;</span>
 
@@ -234,7 +286,7 @@ writing it to check the way it looked in HTML:</p>
         pandoc -s -f markdown -t html -o <span class="s2">&quot;${OUTPUT}&quot;</span> <span class="s2">&quot;${FILE}&quot;</span>
 <span class="k">done</span></code></pre></div>
 
-<p>One last example, where I couldn’t use nix-shell in a shebang line.  I was
+<p>One last example, where I couldn’t use <code>nix-shell</code> in a shebang line.  I was
 playing with <a href="http://jaspervdj.be/hakyll/">Hakyll</a>.  After you use <code>haykll-init</code>
 to generate your project structure, all work is done by compiling your own code
 (in this case, a <code>site.hs</code> that has an accompanying cabal file.  Since something
@@ -242,11 +294,11 @@ similar to the example from the release notes didn’t work, I tried the
 following, a variant of what I’ve used in <code>.nix</code> files.</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#! /usr/bin/env nix-shell</span>
-<span class="c">#! nix-shell -i bash --pure  -p &#39;pkgs.haskellPackages.ghcWithPackages (pkgs: with pkgs; [ hakyll cabal-install ])&#39;</span>
+<span class="c">#! nix-shell --pure -i bash -p &#39;pkgs.haskellPackages.ghcWithPackages (pkgs: with pkgs; [ hakyll cabal-install ])&#39;</span>
 
 cabal run <span class="nv">$@</span></code></pre></div>
 
-<p>But nix-shell didn’t like this:</p>
+<p>But <code>nix-shell</code> didn’t like this:</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">nafai@shedemei:~/Documents/blog/hakyll/technically
 <span class="nv">$ </span>./site-wrapper 
@@ -254,29 +306,23 @@ error: syntax error, unexpected <span class="s1">&#39;)&#39;</span>, at <span cl
 
 <p>So I had to just make this one a regular shell script:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/run/current-system/sw/bin/bash</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#! /usr/bin/env bash</span>
 
 nix-shell --pure <span class="se">\</span>
           -p <span class="s2">&quot;pkgs.haskellPackages.ghcWithPackages (pkgs: with pkgs; [ hakyll cabal-install ])&quot;</span> <span class="se">\</span>
           --run <span class="s2">&quot;cabal run $@&quot;</span></code></pre></div>
 
 <p>Anyway, just in these last few days I’ve found interesting ways to use this new
-capability.  I hope this gives some examples of how it may be used.  I welcome
-any feedback from more experienced Nix users (or comments in general about my
-scripting, I’m a little out of practice).</p>
+capability.  I hope this gives some examples of how it may be used.  I plan on
+writing more posts about other ways I have used this and other useful ways I
+have used Nix tools.  I welcome any feedback from more experienced Nix users (or
+comments in general about my scripting, I’m a little out of practice).</p>
 
-<hr />
+<h2 id="updates">Updates</h2>
+<p>On June 22, 2015, I updated the post to expand the explanation of why this might
+be used, why <code>/usr/bin/env</code> was used along with a second script line, and
+cleaned up and made my examples more consistent.</p>
 
-<p>I intend to move this content to a blog hosted on my own server once I figure
-out a static blog generator to use and all of that associated nonsense.  Putting
-this here for now, I will update with a pointer to the final location.</p>
-
-<p>You can find me at <a href="http://twitter.com/travisbhartwell">@travisbhartwell</a> or as
-<code>Nafai</code> on <code>#nixos</code> on <a href="http://freenode.net">freenode.net</a>.  Most of my personal
-code can now be found on <a href="http://gitlab.com/u/travisbhartwell">Gitlab</a>,
-including my shell scripts and my current configurations for
-<a href="http://nixos.org">Nix OS</a>, bash, X, <a href="http://i3wm.org">i3</a>, and
-<a href="https://github.com/syl20bnr/spacemacs/">Spacemacs</a>.</p>
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -285,11 +331,11 @@ including my shell scripts and my current configurations for
   <header>
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2014-09-18T21:15:00-06:00"><a href="http://iam.travishartwell.net/2014/09/18/my-life-is-unusual/">September 18, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2014-09-19T03:15:00+00:00"><a href="http://iam.travishartwell.net/2014/09/19/my-life-is-unusual/">September 19, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
       
     </div><!-- /.entry-meta -->
     
-      <h1 class="entry-title"><a href="http://iam.travishartwell.net/2014/09/18/my-life-is-unusual/" rel="bookmark" title="My Life is Unusual" itemprop="url">My Life is Unusual</a></h1>
+      <h1 class="entry-title"><a href="http://iam.travishartwell.net/2014/09/19/my-life-is-unusual/" rel="bookmark" title="My Life is Unusual" itemprop="url">My Life is Unusual</a></h1>
     
   </header>
   <div class="entry-content">
@@ -332,7 +378,7 @@ including my shell scripts and my current configurations for
   <header>
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2014-08-18T12:58:00-06:00"><a href="http://iam.travishartwell.net/2014/08/18/rise-up-and-walk/">August 18, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2014-08-18T18:58:00+00:00"><a href="http://iam.travishartwell.net/2014/08/18/rise-up-and-walk/">August 18, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
       
     </div><!-- /.entry-meta -->
     
@@ -381,7 +427,7 @@ including my shell scripts and my current configurations for
   <header>
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2012-06-08T06:12:00-06:00"><a href="http://iam.travishartwell.net/2012/06/08/a-poem-reflected-back/">June 08, 2012</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2012-06-08T12:12:00+00:00"><a href="http://iam.travishartwell.net/2012/06/08/a-poem-reflected-back/">June 08, 2012</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
       
     </div><!-- /.entry-meta -->
     
@@ -425,7 +471,7 @@ won’t be reflected back to me, but reality.  </p>
   <header>
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2012-06-07T17:21:00-06:00"><a href="http://iam.travishartwell.net/2012/06/07/learning-lessons/">June 07, 2012</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2012-06-07T23:21:00+00:00"><a href="http://iam.travishartwell.net/2012/06/07/learning-lessons/">June 07, 2012</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
       
     </div><!-- /.entry-meta -->
     

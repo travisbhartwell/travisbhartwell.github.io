@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://iam.travishartwell.net/feed.xml" />
 <link rel="alternate" type="text/html" href="http://iam.travishartwell.net" />
-<updated>2015-06-19T01:05:09-06:00</updated>
+<updated>2015-06-23T03:37:17+00:00</updated>
 <id>http://iam.travishartwell.net/</id>
 <author>
   <name>Travis B. Hartwell</name>
@@ -17,8 +17,9 @@
   <title type="html"><![CDATA[nix-shell and Shebang Lines]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2015/06/17/nix-shell-shebang/" />
   <id>http://iam.travishartwell.net/2015/06/17/nix-shell-shebang</id>
-  <published>2015-06-17T08:00:00-06:00</published>
-  <updated>2015-06-17T08:00:00-06:00</updated>
+  <updated>2015-06-23 03:00:00 +0000T00:00:00-00:00</updated>
+  <published>2015-06-17T14:00:00+00:00</published>
+  
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -36,15 +37,67 @@ From the release notes:&lt;/p&gt;
 &lt;p&gt;They followed with an example that used GHC’s &lt;code&gt;runhaskell&lt;/code&gt; to execute Haskell
 code using libraries that had been specified in the shebang line.
 Unfortunately, this specific example doesn’t work, as it isn’t sufficient
-information for Haskell to find the Network.HTTP library.&lt;/p&gt;
+information for Haskell to find the Network.HTTP library.  But this notwithstanding,
+it is still an interesting change that I have found useful.&lt;/p&gt;
 
-&lt;p&gt;But this notwithstanding, it is still an interesting change that I have found
-useful.  To use it, start your scripts with two lines similar to this:&lt;/p&gt;
+&lt;h2 id=&quot;why&quot;&gt;Why?&lt;/h2&gt;
+
+&lt;p&gt;First, why would you use this?  Several reasons.  As quoted above, your scripts
+can auto-fetch their own dependencies.  This makes sharing and deploying scripts
+to other Nix-based systems easy.  No having to remember exactly everything that
+is needed.  The script will fetch and install whatever it needs.  If the system
+already has the package installed, Nix will just use that.&lt;/p&gt;
+
+&lt;p&gt;Second, I use this (as is one of my big motivations for Nix in general) to
+isolate things.  I have the minimum set of packages installed to keep my system
+running and support the applications I run regularly.  Then particularly for
+project specific scripts – things not useful outside the context of the
+project, or may have dependencies separate from what the system in general might
+use – I like using &lt;code&gt;nix-shell&lt;/code&gt; scripts.  I don’t have to install all of the
+libraries (gems, npm packages, etc) needed and clutter up my system or &lt;code&gt;$HOME&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-nix-shell-in-a-shebang-line&quot;&gt;Using nix-shell in a Shebang Line&lt;/h2&gt;
+
+&lt;p&gt;To use it, start your scripts with two lines similar to this:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#! /usr/bin/env nix-shell&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#! nix-shell -i python3 -p python3 python34Packages.pygobject3 libnotify gobjectIntrospection gdk_pixbuf&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;The &lt;code&gt;-i&lt;/code&gt; parameter to nix-shell tells it which interpreter to use when executing
+&lt;p&gt;This is a little different than some other shebang lines you might have seen
+before.  First, why use &lt;code&gt;/usr/bin/env&lt;/code&gt; instead of calling &lt;code&gt;nix-shell&lt;/code&gt; directly?
+As explained in the answers to this
+&lt;a href=&quot;http://unix.stackexchange.com/questions/29608/why-is-it-better-to-use-usr-bin-env-name-instead-of-path-to-name-as-my&quot;&gt;Unix StackExchange question&lt;/a&gt;,
+this allows the script to be more portable.  On NixOS systems, you could
+generally reference &lt;code&gt;/run/current-system/sw/bin/nix-shell&lt;/code&gt; as the &lt;code&gt;nix-shell&lt;/code&gt;
+path.  In fact, in previous edits of this post I used that in some of my
+examples.  But if you wanted to share this with a system that was using Nix on
+top of another distribution or OS, that wouldn’t work.&lt;/p&gt;
+
+&lt;p&gt;Related, the second line is needed to get around a potential limitation
+(depending on the system you are running on) in the way that interpreted scripts
+are launched.  Quoting the &lt;em&gt;Interpreter scripts&lt;/em&gt; paragraphs under the &lt;em&gt;NOTES&lt;/em&gt;
+section of the
+&lt;a href=&quot;http://man7.org/linux/man-pages/man2/execve.2.html&quot;&gt;execve(2) man page&lt;/a&gt;: &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A maximum line length of 127 characters is allowed for the first line in an
+interpreter scripts. &lt;/p&gt;
+
+  &lt;p&gt;The semantics of the optional-arg argument of an interpreter script vary
+across implementations.  On Linux, the entire string following the interpreter
+name is passed as a single argument to the interpreter, and this string can
+include white space.  However, behavior differs on some other systems.  Some
+systems use the first white space to terminate optional-arg. On  some
+systems, an interpreter script can have multiple arguments, and white spaces
+in optional-arg are used to delimit the arguments.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, the second line allows passing multiple arguments to &lt;code&gt;nix-shell&lt;/code&gt;, allowing
+for spaces in those arguments, and dealing with a potential line-length limit.&lt;/p&gt;
+
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;-i&lt;/code&gt; parameter to &lt;code&gt;nix-shell&lt;/code&gt; tells it which interpreter to use when executing
 the script.  Often, it is from one of the dependencies, such as in the above
 example.  The &lt;code&gt;-p&lt;/code&gt; parameter gives one or more dependencies to be used. After
 the above lines follows the script (shamelessly borrowed from the
@@ -63,8 +116,8 @@ declared dependencies.  I needed to write a wrapper for some NodeJS scripts I
 had installed in the node_modules directory of a project I am working on.  I
 didn’t want Node installed globally, so I did this:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/run/current-system/sw/bin/env nix-shell&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#!nix-shell -i bash -p nodejs&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#! /usr/bin/env nix-shell&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#! nix-shell -i bash -p nodejs&lt;/span&gt;
 
 &lt;span class=&quot;nb&quot;&gt;readonly &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;BIN_DIR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$(cd -P &amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;dirname &lt;span class=&quot;s2&quot;&gt;&amp;quot;${BASH_SOURCE[0]}&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot; &amp;amp;&amp;amp; pwd)&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;readonly &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$(basename ${BASH_SOURCE[0]/%-wrapper/})&amp;quot;&lt;/span&gt;
@@ -76,11 +129,11 @@ this file, with the name &lt;code&gt;program-wrapper&lt;/code&gt;, for example, 
 &lt;a href=&quot;http://ternjs.net/&quot;&gt;tern&lt;/a&gt;.  Notice my script doesn’t directly call nodejs,
 though the underlying script it calls does.&lt;/p&gt;
 
-&lt;p&gt;One more example.  I wrote the following script to render this document as I was
+&lt;p&gt;I wrote the following script to render this document as I was
 writing it to check the way it looked in HTML:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/run/current-system/sw/bin/env nix-shell&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#!nix-shell -i bash -p inotifyTools pandoc&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#! /usr/bin/env nix-shell&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#! nix-shell -i bash -p inotifyTools pandoc&lt;/span&gt;
 
 &lt;span class=&quot;nb&quot;&gt;readonly &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;FILE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$*&amp;quot;&lt;/span&gt;
 
@@ -106,7 +159,7 @@ writing it to check the way it looked in HTML:&lt;/p&gt;
         pandoc -s -f markdown -t html -o &lt;span class=&quot;s2&quot;&gt;&amp;quot;${OUTPUT}&amp;quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;${FILE}&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;One last example, where I couldn’t use nix-shell in a shebang line.  I was
+&lt;p&gt;One last example, where I couldn’t use &lt;code&gt;nix-shell&lt;/code&gt; in a shebang line.  I was
 playing with &lt;a href=&quot;http://jaspervdj.be/hakyll/&quot;&gt;Hakyll&lt;/a&gt;.  After you use &lt;code&gt;haykll-init&lt;/code&gt;
 to generate your project structure, all work is done by compiling your own code
 (in this case, a &lt;code&gt;site.hs&lt;/code&gt; that has an accompanying cabal file.  Since something
@@ -114,11 +167,11 @@ similar to the example from the release notes didn’t work, I tried the
 following, a variant of what I’ve used in &lt;code&gt;.nix&lt;/code&gt; files.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#! /usr/bin/env nix-shell&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#! nix-shell -i bash --pure  -p &amp;#39;pkgs.haskellPackages.ghcWithPackages (pkgs: with pkgs; [ hakyll cabal-install ])&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#! nix-shell --pure -i bash -p &amp;#39;pkgs.haskellPackages.ghcWithPackages (pkgs: with pkgs; [ hakyll cabal-install ])&amp;#39;&lt;/span&gt;
 
 cabal run &lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;But nix-shell didn’t like this:&lt;/p&gt;
+&lt;p&gt;But &lt;code&gt;nix-shell&lt;/code&gt; didn’t like this:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;nafai@shedemei:~/Documents/blog/hakyll/technically
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./site-wrapper 
@@ -126,29 +179,23 @@ error: syntax error, unexpected &lt;span class=&quot;s1&quot;&gt;&amp;#39;)&amp;
 
 &lt;p&gt;So I had to just make this one a regular shell script:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/run/current-system/sw/bin/bash&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#! /usr/bin/env bash&lt;/span&gt;
 
 nix-shell --pure &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
           -p &lt;span class=&quot;s2&quot;&gt;&amp;quot;pkgs.haskellPackages.ghcWithPackages (pkgs: with pkgs; [ hakyll cabal-install ])&amp;quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
           --run &lt;span class=&quot;s2&quot;&gt;&amp;quot;cabal run $@&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Anyway, just in these last few days I’ve found interesting ways to use this new
-capability.  I hope this gives some examples of how it may be used.  I welcome
-any feedback from more experienced Nix users (or comments in general about my
-scripting, I’m a little out of practice).&lt;/p&gt;
+capability.  I hope this gives some examples of how it may be used.  I plan on
+writing more posts about other ways I have used this and other useful ways I
+have used Nix tools.  I welcome any feedback from more experienced Nix users (or
+comments in general about my scripting, I’m a little out of practice).&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;
+&lt;p&gt;On June 22, 2015, I updated the post to expand the explanation of why this might
+be used, why &lt;code&gt;/usr/bin/env&lt;/code&gt; was used along with a second script line, and
+cleaned up and made my examples more consistent.&lt;/p&gt;
 
-&lt;p&gt;I intend to move this content to a blog hosted on my own server once I figure
-out a static blog generator to use and all of that associated nonsense.  Putting
-this here for now, I will update with a pointer to the final location.&lt;/p&gt;
-
-&lt;p&gt;You can find me at &lt;a href=&quot;http://twitter.com/travisbhartwell&quot;&gt;@travisbhartwell&lt;/a&gt; or as
-&lt;code&gt;Nafai&lt;/code&gt; on &lt;code&gt;#nixos&lt;/code&gt; on &lt;a href=&quot;http://freenode.net&quot;&gt;freenode.net&lt;/a&gt;.  Most of my personal
-code can now be found on &lt;a href=&quot;http://gitlab.com/u/travisbhartwell&quot;&gt;Gitlab&lt;/a&gt;,
-including my shell scripts and my current configurations for
-&lt;a href=&quot;http://nixos.org&quot;&gt;Nix OS&lt;/a&gt;, bash, X, &lt;a href=&quot;http://i3wm.org&quot;&gt;i3&lt;/a&gt;, and
-&lt;a href=&quot;https://github.com/syl20bnr/spacemacs/&quot;&gt;Spacemacs&lt;/a&gt;.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2015/06/17/nix-shell-shebang/&quot;&gt;nix-shell and Shebang Lines&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 17, 2015.&lt;/p&gt;
   </content>
@@ -157,10 +204,10 @@ including my shell scripts and my current configurations for
 
 <entry>
   <title type="html"><![CDATA[My Life is Unusual]]></title>
- <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2014/09/18/my-life-is-unusual/" />
-  <id>http://iam.travishartwell.net/2014/09/18/my-life-is-unusual</id>
-  <published>2014-09-18T21:15:00-06:00</published>
-  <updated>2014-09-18T21:15:00-06:00</updated>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2014/09/19/my-life-is-unusual/" />
+  <id>http://iam.travishartwell.net/2014/09/19/my-life-is-unusual</id>
+  <published>2014-09-19T03:15:00+00:00</published>
+  <updated>2014-09-19T03:15:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -199,7 +246,7 @@ including my shell scripts and my current configurations for
 
 &lt;p&gt;I know that my experience is not like everyone else’s. Sometimes, perhaps there’s a twinge of sadness when I am reminded of that. And I know that sometimes others may experience something similar. A conversation may remind them of something they lack that they desire. Or how simply they are different. I know I have to be sensitive to others. And to remember, my views are through the lens of my experience, no matter how “normal” or “non-normal” it is.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2014/09/18/my-life-is-unusual/&quot;&gt;My Life is Unusual&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on September 18, 2014.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2014/09/19/my-life-is-unusual/&quot;&gt;My Life is Unusual&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on September 19, 2014.&lt;/p&gt;
   </content>
 </entry>
 
@@ -208,8 +255,8 @@ including my shell scripts and my current configurations for
   <title type="html"><![CDATA[Rise Up and Walk]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2014/08/18/rise-up-and-walk/" />
   <id>http://iam.travishartwell.net/2014/08/18/rise-up-and-walk</id>
-  <published>2014-08-18T12:58:00-06:00</published>
-  <updated>2014-08-18T12:58:00-06:00</updated>
+  <published>2014-08-18T18:58:00+00:00</published>
+  <updated>2014-08-18T18:58:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -259,8 +306,8 @@ including my shell scripts and my current configurations for
   <title type="html"><![CDATA[A Poem: Reflected Back]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/06/08/a-poem-reflected-back/" />
   <id>http://iam.travishartwell.net/2012/06/08/a-poem-reflected-back</id>
-  <published>2012-06-08T06:12:00-06:00</published>
-  <updated>2012-06-08T06:12:00-06:00</updated>
+  <published>2012-06-08T12:12:00+00:00</published>
+  <updated>2012-06-08T12:12:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -305,8 +352,8 @@ won’t be reflected back to me, but reality.  &lt;/p&gt;
   <title type="html"><![CDATA[Learning Lessons]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/06/07/learning-lessons/" />
   <id>http://iam.travishartwell.net/2012/06/07/learning-lessons</id>
-  <published>2012-06-07T17:21:00-06:00</published>
-  <updated>2012-06-07T17:21:00-06:00</updated>
+  <published>2012-06-07T23:21:00+00:00</published>
+  <updated>2012-06-07T23:21:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -338,8 +385,8 @@ won’t be reflected back to me, but reality.  &lt;/p&gt;
   <title type="html"><![CDATA[No Apologies, or, provoco et non transverto]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/02/24/no-apologies-or-provoco-et-non-transverto/" />
   <id>http://iam.travishartwell.net/2012/02/24/no-apologies-or-provoco-et-non-transverto</id>
-  <published>2012-02-24T01:42:00-07:00</published>
-  <updated>2012-02-24T01:42:00-07:00</updated>
+  <published>2012-02-24T08:42:00+00:00</published>
+  <updated>2012-02-24T08:42:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -424,10 +471,10 @@ Create&lt;/a&gt;&lt;/li&gt;
 
 <entry>
   <title type="html"><![CDATA[Questions Asked As I Lay In a Hospital Bed]]></title>
- <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/02/13/questions-asked-as-i-lay-in-a-hospital-bed/" />
-  <id>http://iam.travishartwell.net/2012/02/13/questions-asked-as-i-lay-in-a-hospital-bed</id>
-  <published>2012-02-13T21:07:00-07:00</published>
-  <updated>2012-02-13T21:07:00-07:00</updated>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/02/14/questions-asked-as-i-lay-in-a-hospital-bed/" />
+  <id>http://iam.travishartwell.net/2012/02/14/questions-asked-as-i-lay-in-a-hospital-bed</id>
+  <published>2012-02-14T04:07:00+00:00</published>
+  <updated>2012-02-14T04:07:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -464,7 +511,7 @@ Create&lt;/a&gt;&lt;/li&gt;
 
 &lt;p&gt;I don’t know what happened to my fellow patient. Perhaps he soon passed and received the relief of body and soul he sought so desperately in the night. But the feeling and consequence of his words continue with me to this day, and connect me to my own questions, as I ask, “do I want to try again?” I’m just glad I was not faced with those questions back when I was nearly 8. The weight of just hearing another ask them was soul-searing enough.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2012/02/13/questions-asked-as-i-lay-in-a-hospital-bed/&quot;&gt;Questions Asked As I Lay In a Hospital Bed&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on February 13, 2012.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2012/02/14/questions-asked-as-i-lay-in-a-hospital-bed/&quot;&gt;Questions Asked As I Lay In a Hospital Bed&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on February 14, 2012.&lt;/p&gt;
   </content>
 </entry>
 
@@ -473,8 +520,8 @@ Create&lt;/a&gt;&lt;/li&gt;
   <title type="html"><![CDATA[Mid-Life, Not so Much]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2012/02/10/midlife-not-so-much/" />
   <id>http://iam.travishartwell.net/2012/02/10/midlife-not-so-much</id>
-  <published>2012-02-10T10:22:00-07:00</published>
-  <updated>2012-02-10T10:22:00-07:00</updated>
+  <published>2012-02-10T17:22:00+00:00</published>
+  <updated>2012-02-10T17:22:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -564,8 +611,8 @@ To fight… ‘Cause I’m,  &lt;/p&gt;
   <title type="html"><![CDATA[The Real Metric of Personal Growth: The Sign of the Derivative of the Magnitude vs. Time Curve]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/11/13/the-real-metric-of-personal-growth-the-sign-of-derivative-of-the-magnitude-vs-time-curve/" />
   <id>http://iam.travishartwell.net/2011/11/13/the-real-metric-of-personal-growth-the-sign-of-derivative-of-the-magnitude-vs-time-curve</id>
-  <published>2011-11-13T07:01:00-07:00</published>
-  <updated>2011-11-13T07:01:00-07:00</updated>
+  <published>2011-11-13T14:01:00+00:00</published>
+  <updated>2011-11-13T14:01:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -664,8 +711,8 @@ shall inherit the kingdom of heaven. Amen.&lt;/p&gt;
   <title type="html"><![CDATA[Is Love Spoken Here?]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/10/05/is-love-spoken-here/" />
   <id>http://iam.travishartwell.net/2011/10/05/is-love-spoken-here</id>
-  <published>2011-10-05T04:30:00-06:00</published>
-  <updated>2011-10-05T04:30:00-06:00</updated>
+  <published>2011-10-05T10:30:00+00:00</published>
+  <updated>2011-10-05T10:30:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -711,8 +758,8 @@ shall inherit the kingdom of heaven. Amen.&lt;/p&gt;
   <title type="html"><![CDATA[Quintessential Quotes: The Path of Gentle Warriorship]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/08/15/quintessential-quotes-the-path-of-gentle-warriorship/" />
   <id>http://iam.travishartwell.net/2011/08/15/quintessential-quotes-the-path-of-gentle-warriorship</id>
-  <published>2011-08-15T05:27:00-06:00</published>
-  <updated>2011-08-15T05:27:00-06:00</updated>
+  <published>2011-08-15T11:27:00+00:00</published>
+  <updated>2011-08-15T11:27:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -815,8 +862,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[34 things about me, as an introduction]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/07/09/34-things-about-me-as-an-introduction/" />
   <id>http://iam.travishartwell.net/2011/07/09/34-things-about-me-as-an-introduction</id>
-  <published>2011-07-09T01:45:00-06:00</published>
-  <updated>2011-07-09T01:45:00-06:00</updated>
+  <published>2011-07-09T07:45:00+00:00</published>
+  <updated>2011-07-09T07:45:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -941,8 +988,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Flow]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/07/06/flow/" />
   <id>http://iam.travishartwell.net/2011/07/06/flow</id>
-  <published>2011-07-06T02:57:00-06:00</published>
-  <updated>2011-07-06T02:57:00-06:00</updated>
+  <published>2011-07-06T08:57:00+00:00</published>
+  <updated>2011-07-06T08:57:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -966,8 +1013,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[I Believe and This is Me]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/07/04/i-believe-and-this-is-me/" />
   <id>http://iam.travishartwell.net/2011/07/04/i-believe-and-this-is-me</id>
-  <published>2011-07-04T01:05:00-06:00</published>
-  <updated>2011-07-04T01:05:00-06:00</updated>
+  <published>2011-07-04T07:05:00+00:00</published>
+  <updated>2011-07-04T07:05:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1017,8 +1064,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Resonance]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/26/resonance/" />
   <id>http://iam.travishartwell.net/2011/06/26/resonance</id>
-  <published>2011-06-26T03:46:00-06:00</published>
-  <updated>2011-06-26T03:46:00-06:00</updated>
+  <published>2011-06-26T09:46:00+00:00</published>
+  <updated>2011-06-26T09:46:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1062,10 +1109,10 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
 
 <entry>
   <title type="html"><![CDATA[Driving, in my car]]></title>
- <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/17/driving-in-my-car/" />
-  <id>http://iam.travishartwell.net/2011/06/17/driving-in-my-car</id>
-  <published>2011-06-17T18:20:00-06:00</published>
-  <updated>2011-06-17T18:20:00-06:00</updated>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/18/driving-in-my-car/" />
+  <id>http://iam.travishartwell.net/2011/06/18/driving-in-my-car</id>
+  <published>2011-06-18T00:20:00+00:00</published>
+  <updated>2011-06-18T00:20:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1084,7 +1131,7 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
 
 &lt;p&gt;I treasure those moments.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/06/17/driving-in-my-car/&quot;&gt;Driving, in my car&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 17, 2011.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/06/18/driving-in-my-car/&quot;&gt;Driving, in my car&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 18, 2011.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1093,8 +1140,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Just a small act of kindness]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/16/just-a-small-act-of-kindness/" />
   <id>http://iam.travishartwell.net/2011/06/16/just-a-small-act-of-kindness</id>
-  <published>2011-06-16T01:45:00-06:00</published>
-  <updated>2011-06-16T01:45:00-06:00</updated>
+  <published>2011-06-16T07:45:00+00:00</published>
+  <updated>2011-06-16T07:45:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1120,8 +1167,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Kidney Raffle — A Worthy Cause and a chance to win some awesome prizes]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/08/kidney-raffle-a-worthy-cause-and-a-chance-to-win-some-awesome-prizes/" />
   <id>http://iam.travishartwell.net/2011/06/08/kidney-raffle-a-worthy-cause-and-a-chance-to-win-some-awesome-prizes</id>
-  <published>2011-06-08T12:27:00-06:00</published>
-  <updated>2011-06-08T12:27:00-06:00</updated>
+  <published>2011-06-08T18:27:00+00:00</published>
+  <updated>2011-06-08T18:27:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1160,8 +1207,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Susan Lim: Transplant cells, not organs]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/04/17/susan-lim-transplant-cells-not-organs/" />
   <id>http://iam.travishartwell.net/2011/04/17/susan-lim-transplant-cells-not-organs</id>
-  <published>2011-04-17T04:36:00-06:00</published>
-  <updated>2011-04-17T04:36:00-06:00</updated>
+  <published>2011-04-17T10:36:00+00:00</published>
+  <updated>2011-04-17T10:36:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
@@ -1191,8 +1238,8 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
   <title type="html"><![CDATA[Life as a Kidney Transplant Patient (Part 1 -- Medication)]]></title>
  <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/03/13/life-as-a-kidney-transplant-patient-part-1-medication/" />
   <id>http://iam.travishartwell.net/2011/03/13/life-as-a-kidney-transplant-patient-part-1-medication</id>
-  <published>2011-03-13T09:54:00-06:00</published>
-  <updated>2011-03-13T09:54:00-06:00</updated>
+  <published>2011-03-13T15:54:00+00:00</published>
+  <updated>2011-03-13T15:54:00+00:00</updated>
   <author>
     <name>Travis B. Hartwell</name>
     <uri>http://iam.travishartwell.net</uri>
