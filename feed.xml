@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://iam.travishartwell.net/feed.xml" />
 <link rel="alternate" type="text/html" href="http://iam.travishartwell.net" />
-<updated>2015-07-17T09:47:28-06:00</updated>
+<updated>2015-07-17T09:53:06-06:00</updated>
 <id>http://iam.travishartwell.net/</id>
 <author>
   <name>Travis B. Hartwell</name>
@@ -29,7 +29,7 @@
 
 &lt;p&gt;I am available starting tentatively the second week of September.  My goal is to work 15-20 hours a week.&lt;/p&gt;
 
-&lt;p&gt;I am experienced in both software development and system administration.  Professionally, I’ve primarily done work in Python and Java, and in packaging for and managing Debian and Ubuntu machines.  Lately, my interests have lead me to use NixOS and to pursue learning Haskell and other functional programming languages.  Ideally, I’d love to work with the two of those.&lt;/p&gt;
+&lt;p&gt;I am experienced in both software development and system administration.  Professionally, I’ve primarily done work in Python and Java, and in packaging for and managing Debian and Ubuntu machines.  Lately, my interests have led me to use NixOS and to pursue learning Haskell and other functional programming languages.  Ideally, I’d love to work with the two of those.&lt;/p&gt;
 
 &lt;p&gt;I’ve been busy recently dipping my toes in various technologies and helping with open source projects, including Nix OS, Spacemacs, and the Lowbrow browser.  I’ve been doing remote pairing with friends.  I’ve been helping out on IRC and bug trackers for the projects that I use.&lt;/p&gt;
 
