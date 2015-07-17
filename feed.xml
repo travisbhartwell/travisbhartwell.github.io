@@ -4,13 +4,42 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://iam.travishartwell.net/feed.xml" />
 <link rel="alternate" type="text/html" href="http://iam.travishartwell.net" />
-<updated>2015-07-09T07:35:57-06:00</updated>
+<updated>2015-07-17T09:47:28-06:00</updated>
 <id>http://iam.travishartwell.net/</id>
 <author>
   <name>Travis B. Hartwell</name>
   <uri>http://iam.travishartwell.net/</uri>
   <email>nafai@travishartwell.net</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Looking for remote, part-time contract work]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2015/07/17/looking-for-contract-work/" />
+  <id>http://iam.travishartwell.net/2015/07/17/looking-for-contract-work</id>
+  <published>2015-07-17T09:45:00-06:00</published>
+  <updated>2015-07-17T09:45:00-06:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;After an extended break in my career due to chronic illness, I am looking to return to part-time work.  Because of my location and inability to drive, this will have to be a remote position.&lt;/p&gt;
+
+&lt;p&gt;I am available starting tentatively the second week of September.  My goal is to work 15-20 hours a week.&lt;/p&gt;
+
+&lt;p&gt;I am experienced in both software development and system administration.  Professionally, I’ve primarily done work in Python and Java, and in packaging for and managing Debian and Ubuntu machines.  Lately, my interests have lead me to use NixOS and to pursue learning Haskell and other functional programming languages.  Ideally, I’d love to work with the two of those.&lt;/p&gt;
+
+&lt;p&gt;I’ve been busy recently dipping my toes in various technologies and helping with open source projects, including Nix OS, Spacemacs, and the Lowbrow browser.  I’ve been doing remote pairing with friends.  I’ve been helping out on IRC and bug trackers for the projects that I use.&lt;/p&gt;
+
+&lt;p&gt;My primary skill is learning new technologies and learning the best ways to leverage tools.&lt;/p&gt;
+
+&lt;p&gt;Please reach out to me if you think I could help you out.  Check out my &lt;a href=&quot;http://iam.travishartwell.net/resume/&quot;&gt;resume&lt;/a&gt; for further details on my experience and skills.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2015/07/17/looking-for-contract-work/&quot;&gt;Looking for remote, part-time contract work&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on July 17, 2015.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1226,37 +1255,6 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
 &lt;p&gt;Finally, a special shout-out to &lt;a href=&quot;http://www.lifeaftercollege.org/&quot;&gt;Jenny Blake&lt;/a&gt;, a great friend of my sister’s, who is contributing to this great cause as the author of “Life After College”. It means so much to me, and I’m glad I found out about this great event through you, Jenny!&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/06/08/kidney-raffle-a-worthy-cause-and-a-chance-to-win-some-awesome-prizes/&quot;&gt;Kidney Raffle — A Worthy Cause and a chance to win some awesome prizes&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 08, 2011.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Susan Lim: Transplant cells, not organs]]></title>
- <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/04/17/susan-lim-transplant-cells-not-organs/" />
-  <id>http://iam.travishartwell.net/2011/04/17/susan-lim-transplant-cells-not-organs</id>
-  <published>2011-04-17T04:36:00-06:00</published>
-  <updated>2011-04-17T04:36:00-06:00</updated>
-  <author>
-    <name>Travis B. Hartwell</name>
-    <uri>http://iam.travishartwell.net</uri>
-    <email>nafai@travishartwell.net</email>
-  </author>
-  <content type="html">
-    &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/EU15c9hnftE&quot; frameborder=&quot;0&quot;&gt; &lt;/iframe&gt;
-
-&lt;p&gt;As usual, any discussion of transplantation hits close to home to me. I’ve felt to share a few reactions to parts of Dr. Lim’s talk, almost as therapy for myself, to understand the process I myself have been through and the future I have to look forward to as well. A few remarks:&lt;/p&gt;
-
-&lt;p&gt;Dr. Lim mentioned a statistic I’ve heard many other places.  More than a dozen people die each day in the United States alone while waiting for a suitable donor organ. This brings up many feelings I have faced before. When I was on dialysis, I admit I felt guilty. I was only on dialysis for 3 months while I was waiting for everything to come together for my transplant. Yet, most of my fellow patients at the dialysis center would never get that opportunity due to age or other factors. Naturally, the questions of, “Why am I so lucky to have this opportunity? And, even, why me?” came up. And they came up again, with tears, as I thought about the wonderful gift I was given as I listened to Dr. Lim.&lt;/p&gt;
-
-&lt;p&gt;She goes on to talk about a difficult assignment she had and the situation in Singapore, her native country. After performing the first successful cadavaric liver transplant, she was assigned to harvest organs for transplantation from executed prisoners. Many individuals, due to their indigent circumstances, are coerced into donating organs in order to receive money to support themselves or their families. Such a risk and a gift should not be one of coercion — I am so glad I know that my donor kidney was freely given. But the discussion made me think of the moral implications of such a thing.&lt;/p&gt;
-
-&lt;p&gt;Then she goes on to discuss her current research — transplanting stem cells instead of entire organs. In fact, her associates are exploring deriving stem cells from adipose or fat cells, which I believe, as she does, removes many of the moral and ethical questions arising from using embryonic stem cells. Imagine it! A doctor could take my own fat cells and use them to generate a new kidney, a new retina, or whatever cells I need. Amazing!&lt;/p&gt;
-
-&lt;p&gt;Stem cells can be used to cure and treat diseases I deal with and some that are very dear to me deal with. When I started watching this video, I had no idea it would hit even closer to home, with the inevitability of blindness I face with my retinitis pigmentosa. I also have those dear to me that deal with autoimmune diseases. Dr. Lim herself has retinal issues and has a new-found desire and empathy towards her patients with such afflictions. I am excited for the potential this brings.&lt;/p&gt;
-
-&lt;p&gt;These talks always give me hope. They give me pause to think about how such medical technologies and pioneering have truly affected my life. If I was born even 20 years earlier, there are many things in my life that would have prevented me from living as long as I have, in some cases even past infancy. Of course, then, I still think. Why me? Why am I so lucky? I thank Dr. Lim and the many pioneers like her, &lt;a href=&quot;http://iam.travishartwell.net/2011/03/11/world-kidney-day-and-a-special-thanks/&quot; title=&quot;World Kidney Day and a special thanks&quot;&gt;I thank my kidney donor and the rest of those that have helped me&lt;/a&gt; – I thank all of those that have made it possible for me to be this lucky.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/04/17/susan-lim-transplant-cells-not-organs/&quot;&gt;Susan Lim: Transplant cells, not organs&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on April 17, 2011.&lt;/p&gt;
   </content>
 </entry>
 

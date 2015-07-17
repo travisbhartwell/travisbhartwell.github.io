@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://iam.travishartwell.net/2015/07/17/looking-for-contract-work/</loc>
+    <lastmod>2015-07-17T09:45:00-06:00</lastmod>
+  </url>
+  <url>
     <loc>http://iam.travishartwell.net/2015/07/03/introduction-to-spacemacs-installation-screencast/</loc>
     <lastmod>2015-07-03T19:00:00-06:00</lastmod>
   </url>
@@ -122,6 +126,9 @@
   </url>
   <url>
     <loc>http://iam.travishartwell.net/about/</loc>
+  </url>
+  <url>
+    <loc>http://iam.travishartwell.net/resume/</loc>
   </url>
   <url>
     <loc>http://iam.travishartwell.net/page2/</loc>
