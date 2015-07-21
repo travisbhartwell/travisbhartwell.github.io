@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://iam.travishartwell.net/feed.xml" />
 <link rel="alternate" type="text/html" href="http://iam.travishartwell.net" />
-<updated>2015-07-20T20:54:35-06:00</updated>
+<updated>2015-07-21T06:19:23-06:00</updated>
 <id>http://iam.travishartwell.net/</id>
 <author>
   <name>Travis B. Hartwell</name>
@@ -51,7 +51,13 @@
 
 &lt;p&gt;We’ve submitted pull requests to get this included in &lt;a href=&quot;http://melpa.org/#/&quot;&gt;MELPA&lt;/a&gt; so you can easily install it.  Also, we’ve submitted a pull request to &lt;a href=&quot;https://github.com/syl20bnr/spacemacs/&quot;&gt;Spacemacs&lt;/a&gt;, the Emacs configuration we both use, to add a Nix layer, with everything configured out of the box.&lt;/p&gt;
 
-&lt;p&gt;This is just an initial release.  Hopefully more refinements to come.  Feel free to follow along on &lt;a href=&quot;https://github.com/travisbhartwell/nix-emacs/&quot;&gt;Github&lt;/a&gt;.  Submit any issues you may have, submit pull requests, etc.&lt;/p&gt;
+&lt;p&gt;This is just an initial release.  Hopefully more refinements to come.  Feel free to follow along on &lt;a href=&quot;https://github.com/travisbhartwell/nix-emacs/&quot;&gt;Github&lt;/a&gt;.  Submit any issues you may have or submit pull requests.&lt;/p&gt;
+
+&lt;p&gt;We also have a &lt;a href=&quot;https://gitter.im/travisbhartwell/nix-emacs?utm_source=share-link&amp;amp;utm_medium=link&amp;amp;utm_campaign=share-link&quot;&gt;Gitter&lt;/a&gt; channel, if you want to chat with us.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Updated on 2015-07-21 to add Gitter link.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2015/07/20/announce-nix-emacs/&quot;&gt;Announcing nix-emacs v0.0.1&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on July 20, 2015.&lt;/p&gt;
   </content>
