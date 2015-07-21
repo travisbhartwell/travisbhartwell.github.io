@@ -4,13 +4,58 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://iam.travishartwell.net/feed.xml" />
 <link rel="alternate" type="text/html" href="http://iam.travishartwell.net" />
-<updated>2015-07-17T09:53:06-06:00</updated>
+<updated>2015-07-20T20:54:35-06:00</updated>
 <id>http://iam.travishartwell.net/</id>
 <author>
   <name>Travis B. Hartwell</name>
   <uri>http://iam.travishartwell.net/</uri>
   <email>nafai@travishartwell.net</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Announcing nix-emacs v0.0.1]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2015/07/20/announce-nix-emacs/" />
+  <id>http://iam.travishartwell.net/2015/07/20/announce-nix-emacs</id>
+  <published>2015-07-20T20:45:00-06:00</published>
+  <updated>2015-07-20T20:45:00-06:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;My friend &lt;a href=&quot;http://cestdiego.github.io&quot;&gt;Diego Berrocal&lt;/a&gt; and I would like to announce the release of &lt;a href=&quot;https://github.com/travisbhartwell/nix-emacs/releases/tag/v0.0.1&quot;&gt;nix-emacs v0.0.1&lt;/a&gt;.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/4FZl_a7YQIA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt; &lt;/iframe&gt;
+
+&lt;p&gt;nix-emacs adds support for searching and completing options in &lt;a href=&quot;http://nixos.org&quot;&gt;Nix OS&lt;/a&gt; configuration files.  Nix OS is configured using the Nix expression language.  This includes configuration from your hostname to options for various services you may enable.  The &lt;a href=&quot;https://nixos.org/nixos/manual/ch-options.html&quot;&gt;online documentation&lt;/a&gt; lists the abundant options available.  There is also a &lt;a href=&quot;https://nixos.org/nixos/options.html&quot;&gt;handy interface&lt;/a&gt; for searching the options.&lt;/p&gt;
+
+&lt;p&gt;But, we found it less than ideal to have to constantly switch back and forth between the browser and our editor while editing our configurations.&lt;/p&gt;
+
+&lt;p&gt;Included is support for:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A &lt;a href=&quot;https://emacs-helm.github.io/helm/&quot;&gt;helm&lt;/a&gt; source for searching the options and viewing documentation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/travisbhartwell/nix-emacs/raw/v0.0.1/img/helm-nixos-options.gif&quot; alt=&quot;helm-nixos-options&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A &lt;a href=&quot;http://company-mode.github.io/&quot;&gt;company&lt;/a&gt; backend for completion of option names in nix-mode files.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/travisbhartwell/nix-emacs/raw/v0.0.1/img/company-nixos-options.gif&quot; alt=&quot;company-nixos-options&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://github.com/travisbhartwell/nix-emacs/blob/v0.0.1/README.org&quot;&gt;README&lt;/a&gt; for instructions on how to use nix-emacs.&lt;/p&gt;
+
+&lt;p&gt;We’ve submitted pull requests to get this included in &lt;a href=&quot;http://melpa.org/#/&quot;&gt;MELPA&lt;/a&gt; so you can easily install it.  Also, we’ve submitted a pull request to &lt;a href=&quot;https://github.com/syl20bnr/spacemacs/&quot;&gt;Spacemacs&lt;/a&gt;, the Emacs configuration we both use, to add a Nix layer, with everything configured out of the box.&lt;/p&gt;
+
+&lt;p&gt;This is just an initial release.  Hopefully more refinements to come.  Feel free to follow along on &lt;a href=&quot;https://github.com/travisbhartwell/nix-emacs/&quot;&gt;Github&lt;/a&gt;.  Submit any issues you may have, submit pull requests, etc.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2015/07/20/announce-nix-emacs/&quot;&gt;Announcing nix-emacs v0.0.1&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on July 20, 2015.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1215,46 +1260,6 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
 &lt;p&gt;I don’t why it had such significance for me. She didn’t make a big deal out of things. But at the same time, she took a moment to help me out and did it in a kind manner. It’s these little things that make me comfortable and not fret about being different.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/06/16/just-a-small-act-of-kindness/&quot;&gt;Just a small act of kindness&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 16, 2011.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Kidney Raffle — A Worthy Cause and a chance to win some awesome prizes]]></title>
- <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/08/kidney-raffle-a-worthy-cause-and-a-chance-to-win-some-awesome-prizes/" />
-  <id>http://iam.travishartwell.net/2011/06/08/kidney-raffle-a-worthy-cause-and-a-chance-to-win-some-awesome-prizes</id>
-  <published>2011-06-08T12:27:00-06:00</published>
-  <updated>2011-06-08T12:27:00-06:00</updated>
-  <author>
-    <name>Travis B. Hartwell</name>
-    <uri>http://iam.travishartwell.net</uri>
-    <email>nafai@travishartwell.net</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;I just made a small donation to help &lt;a href=&quot;http://twitter.com/cathduncan&quot;&gt;Cath Duncan&lt;/a&gt; and the rest of &lt;a href=&quot;http://www.facebook.com/TeamJuggernaut&quot;&gt;Team Juggernaut&lt;/a&gt; raise &lt;a href=&quot;http://kidneyraffle.com/goal/&quot;&gt;$45K&lt;/a&gt; to help fund kidney research.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.on2url.com/app/adtrack.asp?MerchantID=148325&amp;amp;AdID=554561&quot;&gt;&lt;img src=&quot;http://kidneyraffle.com/wp-content/uploads/2011/05/roadway_renegade_badge-250x250.jpg&quot; alt=&quot;KidneyRaffle.com Roadway Renegade Supporter&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;(&lt;strong&gt;As of June 18, 2015: Image and link that was here no longer work.&lt;/strong&gt;)&lt;/p&gt;
-
-&lt;p&gt;Please, I urge you to &lt;a href=&quot;http://kidneyraffle.com/&quot;&gt;go and donate&lt;/a&gt; whatever you can spare. It will help the quality of life of millions of people, myself included.&lt;/p&gt;
-
-&lt;p&gt;My donation today is in honor of &lt;a href=&quot;http://iam.travishartwell.net/2011/03/11/world-kidney-day-and-a-special-thanks/&quot;&gt;all of those that have helped me&lt;/a&gt; through my kidney disease and transplant. In particular, in honor of Ann Henson who donated one of her kidneys to me, nearly two years ago on June 19, 2009:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://picasaweb.google.com/lh/photo/VhHjk1DYKzSJefakOHO5u5Q3lbdn6N6klT7AX0JJagc?feat=embedwebsite&quot;&gt;&lt;img src=&quot;https://lh5.googleusercontent.com/-IQlX0BBUh3g/Tc8XrfSkchI/AAAAAAAAABU/kfHY3tJZYFE/s400/p5140014.jpg&quot; alt=&quot;Celebration of Life Monument&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;From &lt;a href=&quot;https://picasaweb.google.com/113350540850872121034/CelebrationOfLifeMonument?authkey=Gv1sRgCOftn4iwxaL9Aw&amp;amp;feat=embedwebsite&quot;&gt;Celebration of Life Monument&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Finally, a special shout-out to &lt;a href=&quot;http://www.lifeaftercollege.org/&quot;&gt;Jenny Blake&lt;/a&gt;, a great friend of my sister’s, who is contributing to this great cause as the author of “Life After College”. It means so much to me, and I’m glad I found out about this great event through you, Jenny!&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/06/08/kidney-raffle-a-worthy-cause-and-a-chance-to-win-some-awesome-prizes/&quot;&gt;Kidney Raffle — A Worthy Cause and a chance to win some awesome prizes&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 08, 2011.&lt;/p&gt;
   </content>
 </entry>
 
