@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://iam.travishartwell.net/2015/07/29/how-to-make-a-pr-for-spacemacs/</loc>
+    <lastmod>2015-07-29T23:00:00-06:00</lastmod>
+  </url>
+  <url>
     <loc>http://iam.travishartwell.net/2015/07/20/announce-nix-emacs/</loc>
     <lastmod>2015-07-20T20:45:00-06:00</lastmod>
   </url>

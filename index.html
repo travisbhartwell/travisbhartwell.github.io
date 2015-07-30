@@ -145,6 +145,129 @@
   <header>
     
     <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2015-07-29T23:00:00-06:00"><a href="http://iam.travishartwell.net/2015/07/29/how-to-make-a-pr-for-spacemacs/">July 29, 2015</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://iam.travishartwell.net/2015/07/29/how-to-make-a-pr-for-spacemacs/" rel="bookmark" title="How to Make a Pull Request for Spacemacs" itemprop="url">How to Make a Pull Request for Spacemacs</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <p>I’ve created a screencast demonstrating making a <a href="https://help.github.com/articles/using-pull-requests/">pull request</a> for open source projects, specifically, <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a>.  The principles explained here apply to any Git and Github based project.  In this screencast, I demonstrate fixing an <a href="https://github.com/syl20bnr/spacemacs/issues/2431">issue I reported</a> with how bookmarks were being handled in the Spacemacs home buffer:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pWzJ6IGXwmk" frameborder="0" allowfullscreen=""> </iframe>
+
+<h2 id="how-to-do-it">How to do it</h2>
+
+<h3 id="fork-the-repository">Fork the Repository</h3>
+<p>Create the <a href="https://help.github.com/articles/fork-a-repo/">fork</a> by visiting the project page on Github.  In the case of Spacemacs, it’s at <a href="https://github.com/syl20bnr/spacemacs/">https://github.com/syl20bnr/spacemacs/</a>.  On that page, click the <em>Fork</em> button on the upper right side of the page.  If you happen to belong to organizations on Github (which I do, as seen in the video), you will be prompted to select where to fork the repository.  Select your user.</p>
+
+<p>This will create a new repository for your user that is a mirror of the current state of the <a href="https://help.github.com/articles/github-glossary/#upstream">upstream</a> repository.</p>
+
+<p>Note the repository clone URL that is shown on the right-hand side of the page, part way down.  This is needed when you add your repository as a remote to your local checkout.</p>
+
+<h3 id="update-your-local-repository">Update your local repository</h3>
+<p>Next, you need to make sure your local checkout of the Spacemacs repository is up to date.  As specified in the <a href="https://github.com/syl20bnr/spacemacs/blob/develop/doc/CONTRIBUTE.org#pull-request-guidelines">Spacemacs Contributor Guidelines</a>, contributions are best done off of the <code>develop</code> branch.</p>
+
+<ol>
+  <li>
+    <p>Go to magit-status for the Spacemacs repository by doing <code>SPC u SPC g s</code> (<em>Hit the spacebar, then u, then the spacebar again, then g, then s</em>).  Then enter the path of the Spacemacs repository, <code>~/.emacs.d</code>, and hit <code>RETURN</code>.</p>
+  </li>
+  <li>
+    <p>Switch to the develop branch, if you are not already there. Hit <code>b b</code> and type <code>develop</code>.  One thing I did not cover in the video is the case if you haven’t already checked out the develop branch previously, instead of <code>b b</code> (or, <em>branch checkout</em>), you need to do <code>b B</code> (or, <em>create and checkout</em>).  It will prompt you for the branch to base it off of, select or type <code>origin/develop</code>, hit <code>RETURN</code> and then name the branch <code>develop</code>.  Note that any time in the <code>magit-status</code> buffer, if you want to know what commands are available, just hit <code>?</code>.</p>
+  </li>
+  <li>
+    <p>After you have the develop branch checked out, update it against the remote upstream repository.  Hit <code>F</code> for Pulling.  Then type <code>-r</code> to rebase.  Even though we don’t yet have any local commits, it makes sense to rebase any unpushed commits on the remote branch so that they are up to date and can be merged without merge commits.  Hit <code>F</code> to pull and rebase.  After this is done, we want to restart Emacs to run any of the latest changes.  Hit <code>SPC q q</code> to quit Emacs.  Relaunch Emacs.</p>
+  </li>
+</ol>
+
+<h3 id="adding-your-remote">Adding your remote</h3>
+
+<p>We now need to add our newly-forked remote repository as a remote in our Spacemacs repository.  There are several strategies that can be taken here.  One option is to wipe your <code>~/.emacs.d</code> directory and clone your fork, making it <code>origin</code>.  You would then add the upstream, original repository as a new remote (perhaps named <code>upstream</code>) that you could pull from.  But since I am more often than not going to be running and updating code from the upstream repository, I will leave the upstream as <code>origin</code>, and add my fork as <code>mine</code>.</p>
+
+<ol>
+  <li>
+    <p>Go to the <code>magit-status</code> buffer again: <code>SPC u SPC g s ~/.emacs.d RET</code>.</p>
+  </li>
+  <li>
+    <p>Hit <code>M</code> (or, <em>Remoting</em>) and then <code>a</code> (or, <em>Add</em>).</p>
+  </li>
+  <li>
+    <p>When prompted, give the remote a name.  I called it <code>mine</code>.</p>
+  </li>
+  <li>
+    <p>When prompted for the remote URL, put the URL that you copied from the <em>Clone URL</em> on your project page.  For example, mine was <code>git@github.com:travisbhartwell/spacemacs</code>.</p>
+  </li>
+</ol>
+
+<h3 id="creating-a-branch-for-your-changes">Creating a branch for your changes</h3>
+
+<p>Before any changes are made, we need to make a branch to put them in.  You could just commit to the <code>develop</code> branch, push your changes to your fork, and then do a pull request off of that.  But since I often have multiple pull requests open at one time, I find it simpler to do a branch per pull request.  This also allows my branches to have meaningful names.</p>
+
+<ol>
+  <li>
+    <p>From the <code>magit-status</code> buffer, hit <code>b B</code> (or, <em>create and checkout branch</em>).</p>
+  </li>
+  <li>
+    <p>magit will then prompt you for the branch you are branching off of.  Choose <code>develop</code>.</p>
+  </li>
+  <li>
+    <p>Next, it will prompt you for a branch name.  I like long descriptive names, so I chose <code>fix/spacemacs-home-buffer-bookmarks-jump</code>.</p>
+  </li>
+</ol>
+
+<p>Check out the <a href="http://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">Git book chapter on branching</a> for an in-depth discussion of branching.</p>
+
+<h3 id="make-commit-and-push-changes">Make, commit, and push changes</h3>
+
+<p>Now that we have a branch we can make our changes.  In the video, I used a previously created <a href="http://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning">Git stash</a> to quickly apply changes to my repository.  I simply applied it by hitting <code>z p</code> (or, <em>Stash pop</em>).  Go ahead and make the changes you want.  After you have tested and are satisfied with them, you are ready to commit and push.</p>
+
+<ol>
+  <li>
+    <p>Go to the <code>magit-status</code> buffer again: <code>SPC u SPC g s ~/.emacs.d RET</code>.</p>
+  </li>
+  <li>
+    <p>Stage any unstaged changes you have made.  Quickly: hit <code>s</code> on each line under <em>Unstaged changes</em> corresponding to a file you’ve changed.</p>
+  </li>
+  <li>
+    <p>Hit <code>c c</code> to commit all staged changes.</p>
+  </li>
+  <li>
+    <p>Type a meaningful commit message.  (See <a href="http://chris.beams.io/posts/git-commit/">this post</a> for a great explanation of what a good commit message is.)  Helpfully, the diff of what you have changed is shown on the right-hand side for you to see what you did.  Make the first line be a short subject describing the commit.  Add a blank line and then in lines wrapped at 78, write a brief description of the changes and why.  If you are fixing an issue that has been filed, include something along the lines of ‘Fixes #2431’.  Hit <code>C-c C-c</code> (<em>that’s Control and c together, and then again</em>).</p>
+  </li>
+  <li>
+    <p>Hit <code>P</code> (or, <em>Pushing</em>).  Then, <code>-u</code> to set the upstream so subsequent pushes, if needed, default to this remote.  Then <code>P</code> (or, <em>Push current</em>).  Start typing the name of your remote (in my case, <code>mine</code>), and it will finish the branch name for you – <code>mine/fix/spacemacs-home-buffer-bookmarks-jump</code>.  Hit <code>RETURN</code>.</p>
+  </li>
+</ol>
+
+<h3 id="make-the-pull-request">Make the pull request</h3>
+
+<p>You are now ready to submit your pull request.  Switch back to your browser to the page for your fork.</p>
+
+<ol>
+  <li>
+    <p>Github will show your recently pushed branches near the top, in a yellow box.  Refresh your page if you don’t see this.  Click the green <em>“Compare &amp; pull request”</em> button.</p>
+  </li>
+  <li>
+    <p>In the next screen, Github will prompt you for a branch to compare against.  By default it will show <em>base: master</em>.  We want to select <code>develop</code> here.  As shown in the video, it make take a minute for the page to update after you have selected the <code>develop</code> branch.</p>
+  </li>
+  <li>
+    <p>If you’ve done everything right, it will be able to cleanly merge your commit and will indicate so.  It will then pull from your commit message the subject and description.  If you’ve written a good commit message, there should be no need to add anything here.  Click <em>Create pull request</em>.</p>
+  </li>
+</ol>
+
+<p>Congratulations!  There you go, you have created your first pull request.  Hopefully the project developers will like your pull request and merge it.</p>
+
+<p>Happy Hacking!</p>
+
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
       <span class="entry-date date published updated"><time datetime="2015-07-20T20:45:00-06:00"><a href="http://iam.travishartwell.net/2015/07/20/announce-nix-emacs/">July 20, 2015</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
       
     </div><!-- /.entry-meta -->
@@ -424,53 +547,6 @@ comments in general about my scripting, I’m a little out of practice).</p>
 be used, why <code>/usr/bin/env</code> was used along with a second script line, and
 cleaned up and made my examples more consistent.</p>
 
-
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  <header>
-    
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2014-09-18T21:15:00-06:00"><a href="http://iam.travishartwell.net/2014/09/18/my-life-is-unusual/">September 18, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://iam.travishartwell.net/about/" title="About Travis B. Hartwell">Travis B. Hartwell</a></span></span>
-      
-    </div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title"><a href="http://iam.travishartwell.net/2014/09/18/my-life-is-unusual/" rel="bookmark" title="My Life is Unusual" itemprop="url">My Life is Unusual</a></h1>
-    
-  </header>
-  <div class="entry-content">
-    <p>Sometimes, I forget I am not like the most of the world. Sometimes, I forget just how much our reality shapes our vision.</p>
-
-<p>A few vignettes:</p>
-
-<p style="text-align: center">¶</p>
-
-<p>My sister Sharalyn recently reminded me of this story. We were young.   I was perhaps 7, she would have been 4.  By that time she was already taller than me.  Our Dad is a truck driver, and there were always trailers parked in our yard.  I would run underneath the front of the flat-bed trailers, instead of going around them, to get out to the mailbox by the road.  This one day, Sharalyn followed me.   Unfortunately, she was met with a big surprise.</p>
-
-<p>Underneath the front of the trailer is a little metal rod called the kingpin.  It was what hooks the trailer up to the truck.  These are lubed with grease so they can turn.  It sticks down about six inches or so below the rest of the trailer.</p>
-
-<p>I was short enough to go right underneath.  It didn’t occur to either me or my sister, at that age, that she could not.  She ended up getting grease all over in her hair and went inside really unhappy.  She recalls it as the first time it really clicked to her that she and I were different.</p>
-
-<p style="text-align: center">¶</p>
-
-<p>This morning, I was watching the latest <a href="https://www.youtube.com/watch?v=3n-DOKBffuU">Mormon Messages video on Youtube</a>. I was still in bed myself, still hooked up to my dialysis machine. As I watched the mother in this video needing to get out of bed to go take care of her children, my natural thought was, “well, she needs to get unhooked first, before she can get up!” Of course, immediately, I realized that I was projecting my circumstance onto her. It was like having to all over again realize, hey, I’m different.</p>
-
-<p style="text-align: center">¶</p>
-
-<p>I remember a year or so ago watching a movie. Again, someone was just waking up and ready to get out of bed. They sat up and turned to the side of their bed. I remember thinking it was so odd that their feet touched the ground. My experience has always been no matter how high something is that I’m sitting on, my feet don’t reach the ground. In my mind, I took for granted the fact that not everyone is like this.</p>
-
-<p style="text-align: center">¶</p>
-
-<p>One last slightly different story. I was still at university, probably about 24-25. I was walking across campus by one of those buildings that was all glass. I glanced over as I was walking, and got a glimpse of my whole self. I remember doing a double-take. Was this really me? It was like I didn’t identify with the body I had lived my whole life in.</p>
-
-<p style="text-align: center">§</p>
-
-<p>I’ve always teetered the thin line between recognizing how myself or my life is different than most or thinking I’m just like everyone else (or they are just like me). As a child, I think I knew I wasn’t like my brother or sister. But, looking back, I don’t think it really clicked I was different. My experience this morning of projecting my normalcy of my dialysis procedure onto this women in the video shows how that continues. We each live in our reality, and it colors the way we see the world. A friend wrote on Facebook this morning how her life was so different from many of her friends, as they were writing about potty training or helping their children with homework, and she is single and her biggest worries are related to her responsibilities at work or news of the world.</p>
-
-<p>Sometimes, whether it is a difference like being single instead of married and a parent, or dealing with chronic illness or not, or being a different race, or religion, or gender or whatever, you might constantly have to realize that difference in experience all over again. And, sometimes, that reminder carries with it a judgment (whether perceived or real) on the value of the difference.</p>
-
-<p>I know that my experience is not like everyone else’s. Sometimes, perhaps there’s a twinge of sadness when I am reminded of that. And I know that sometimes others may experience something similar. A conversation may remind them of something they lack that they desire. Or how simply they are different. I know I have to be sensitive to others. And to remember, my views are through the lens of my experience, no matter how “normal” or “non-normal” it is.</p>
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->

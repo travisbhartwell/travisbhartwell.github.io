@@ -4,13 +4,138 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://iam.travishartwell.net/feed.xml" />
 <link rel="alternate" type="text/html" href="http://iam.travishartwell.net" />
-<updated>2015-07-21T07:16:42-06:00</updated>
+<updated>2015-07-29T22:53:55-06:00</updated>
 <id>http://iam.travishartwell.net/</id>
 <author>
   <name>Travis B. Hartwell</name>
   <uri>http://iam.travishartwell.net/</uri>
   <email>nafai@travishartwell.net</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[How to Make a Pull Request for Spacemacs]]></title>
+ <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2015/07/29/how-to-make-a-pr-for-spacemacs/" />
+  <id>http://iam.travishartwell.net/2015/07/29/how-to-make-a-pr-for-spacemacs</id>
+  <published>2015-07-29T23:00:00-06:00</published>
+  <updated>2015-07-29T23:00:00-06:00</updated>
+  <author>
+    <name>Travis B. Hartwell</name>
+    <uri>http://iam.travishartwell.net</uri>
+    <email>nafai@travishartwell.net</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I’ve created a screencast demonstrating making a &lt;a href=&quot;https://help.github.com/articles/using-pull-requests/&quot;&gt;pull request&lt;/a&gt; for open source projects, specifically, &lt;a href=&quot;https://github.com/syl20bnr/spacemacs&quot;&gt;Spacemacs&lt;/a&gt;.  The principles explained here apply to any Git and Github based project.  In this screencast, I demonstrate fixing an &lt;a href=&quot;https://github.com/syl20bnr/spacemacs/issues/2431&quot;&gt;issue I reported&lt;/a&gt; with how bookmarks were being handled in the Spacemacs home buffer:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/pWzJ6IGXwmk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt; &lt;/iframe&gt;
+
+&lt;h2 id=&quot;how-to-do-it&quot;&gt;How to do it&lt;/h2&gt;
+
+&lt;h3 id=&quot;fork-the-repository&quot;&gt;Fork the Repository&lt;/h3&gt;
+&lt;p&gt;Create the &lt;a href=&quot;https://help.github.com/articles/fork-a-repo/&quot;&gt;fork&lt;/a&gt; by visiting the project page on Github.  In the case of Spacemacs, it’s at &lt;a href=&quot;https://github.com/syl20bnr/spacemacs/&quot;&gt;https://github.com/syl20bnr/spacemacs/&lt;/a&gt;.  On that page, click the &lt;em&gt;Fork&lt;/em&gt; button on the upper right side of the page.  If you happen to belong to organizations on Github (which I do, as seen in the video), you will be prompted to select where to fork the repository.  Select your user.&lt;/p&gt;
+
+&lt;p&gt;This will create a new repository for your user that is a mirror of the current state of the &lt;a href=&quot;https://help.github.com/articles/github-glossary/#upstream&quot;&gt;upstream&lt;/a&gt; repository.&lt;/p&gt;
+
+&lt;p&gt;Note the repository clone URL that is shown on the right-hand side of the page, part way down.  This is needed when you add your repository as a remote to your local checkout.&lt;/p&gt;
+
+&lt;h3 id=&quot;update-your-local-repository&quot;&gt;Update your local repository&lt;/h3&gt;
+&lt;p&gt;Next, you need to make sure your local checkout of the Spacemacs repository is up to date.  As specified in the &lt;a href=&quot;https://github.com/syl20bnr/spacemacs/blob/develop/doc/CONTRIBUTE.org#pull-request-guidelines&quot;&gt;Spacemacs Contributor Guidelines&lt;/a&gt;, contributions are best done off of the &lt;code&gt;develop&lt;/code&gt; branch.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go to magit-status for the Spacemacs repository by doing &lt;code&gt;SPC u SPC g s&lt;/code&gt; (&lt;em&gt;Hit the spacebar, then u, then the spacebar again, then g, then s&lt;/em&gt;).  Then enter the path of the Spacemacs repository, &lt;code&gt;~/.emacs.d&lt;/code&gt;, and hit &lt;code&gt;RETURN&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Switch to the develop branch, if you are not already there. Hit &lt;code&gt;b b&lt;/code&gt; and type &lt;code&gt;develop&lt;/code&gt;.  One thing I did not cover in the video is the case if you haven’t already checked out the develop branch previously, instead of &lt;code&gt;b b&lt;/code&gt; (or, &lt;em&gt;branch checkout&lt;/em&gt;), you need to do &lt;code&gt;b B&lt;/code&gt; (or, &lt;em&gt;create and checkout&lt;/em&gt;).  It will prompt you for the branch to base it off of, select or type &lt;code&gt;origin/develop&lt;/code&gt;, hit &lt;code&gt;RETURN&lt;/code&gt; and then name the branch &lt;code&gt;develop&lt;/code&gt;.  Note that any time in the &lt;code&gt;magit-status&lt;/code&gt; buffer, if you want to know what commands are available, just hit &lt;code&gt;?&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;After you have the develop branch checked out, update it against the remote upstream repository.  Hit &lt;code&gt;F&lt;/code&gt; for Pulling.  Then type &lt;code&gt;-r&lt;/code&gt; to rebase.  Even though we don’t yet have any local commits, it makes sense to rebase any unpushed commits on the remote branch so that they are up to date and can be merged without merge commits.  Hit &lt;code&gt;F&lt;/code&gt; to pull and rebase.  After this is done, we want to restart Emacs to run any of the latest changes.  Hit &lt;code&gt;SPC q q&lt;/code&gt; to quit Emacs.  Relaunch Emacs.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;adding-your-remote&quot;&gt;Adding your remote&lt;/h3&gt;
+
+&lt;p&gt;We now need to add our newly-forked remote repository as a remote in our Spacemacs repository.  There are several strategies that can be taken here.  One option is to wipe your &lt;code&gt;~/.emacs.d&lt;/code&gt; directory and clone your fork, making it &lt;code&gt;origin&lt;/code&gt;.  You would then add the upstream, original repository as a new remote (perhaps named &lt;code&gt;upstream&lt;/code&gt;) that you could pull from.  But since I am more often than not going to be running and updating code from the upstream repository, I will leave the upstream as &lt;code&gt;origin&lt;/code&gt;, and add my fork as &lt;code&gt;mine&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go to the &lt;code&gt;magit-status&lt;/code&gt; buffer again: &lt;code&gt;SPC u SPC g s ~/.emacs.d RET&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Hit &lt;code&gt;M&lt;/code&gt; (or, &lt;em&gt;Remoting&lt;/em&gt;) and then &lt;code&gt;a&lt;/code&gt; (or, &lt;em&gt;Add&lt;/em&gt;).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When prompted, give the remote a name.  I called it &lt;code&gt;mine&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When prompted for the remote URL, put the URL that you copied from the &lt;em&gt;Clone URL&lt;/em&gt; on your project page.  For example, mine was &lt;code&gt;git@github.com:travisbhartwell/spacemacs&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;creating-a-branch-for-your-changes&quot;&gt;Creating a branch for your changes&lt;/h3&gt;
+
+&lt;p&gt;Before any changes are made, we need to make a branch to put them in.  You could just commit to the &lt;code&gt;develop&lt;/code&gt; branch, push your changes to your fork, and then do a pull request off of that.  But since I often have multiple pull requests open at one time, I find it simpler to do a branch per pull request.  This also allows my branches to have meaningful names.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;From the &lt;code&gt;magit-status&lt;/code&gt; buffer, hit &lt;code&gt;b B&lt;/code&gt; (or, &lt;em&gt;create and checkout branch&lt;/em&gt;).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;magit will then prompt you for the branch you are branching off of.  Choose &lt;code&gt;develop&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Next, it will prompt you for a branch name.  I like long descriptive names, so I chose &lt;code&gt;fix/spacemacs-home-buffer-bookmarks-jump&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell&quot;&gt;Git book chapter on branching&lt;/a&gt; for an in-depth discussion of branching.&lt;/p&gt;
+
+&lt;h3 id=&quot;make-commit-and-push-changes&quot;&gt;Make, commit, and push changes&lt;/h3&gt;
+
+&lt;p&gt;Now that we have a branch we can make our changes.  In the video, I used a previously created &lt;a href=&quot;http://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning&quot;&gt;Git stash&lt;/a&gt; to quickly apply changes to my repository.  I simply applied it by hitting &lt;code&gt;z p&lt;/code&gt; (or, &lt;em&gt;Stash pop&lt;/em&gt;).  Go ahead and make the changes you want.  After you have tested and are satisfied with them, you are ready to commit and push.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go to the &lt;code&gt;magit-status&lt;/code&gt; buffer again: &lt;code&gt;SPC u SPC g s ~/.emacs.d RET&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Stage any unstaged changes you have made.  Quickly: hit &lt;code&gt;s&lt;/code&gt; on each line under &lt;em&gt;Unstaged changes&lt;/em&gt; corresponding to a file you’ve changed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Hit &lt;code&gt;c c&lt;/code&gt; to commit all staged changes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Type a meaningful commit message.  (See &lt;a href=&quot;http://chris.beams.io/posts/git-commit/&quot;&gt;this post&lt;/a&gt; for a great explanation of what a good commit message is.)  Helpfully, the diff of what you have changed is shown on the right-hand side for you to see what you did.  Make the first line be a short subject describing the commit.  Add a blank line and then in lines wrapped at 78, write a brief description of the changes and why.  If you are fixing an issue that has been filed, include something along the lines of ‘Fixes #2431’.  Hit &lt;code&gt;C-c C-c&lt;/code&gt; (&lt;em&gt;that’s Control and c together, and then again&lt;/em&gt;).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Hit &lt;code&gt;P&lt;/code&gt; (or, &lt;em&gt;Pushing&lt;/em&gt;).  Then, &lt;code&gt;-u&lt;/code&gt; to set the upstream so subsequent pushes, if needed, default to this remote.  Then &lt;code&gt;P&lt;/code&gt; (or, &lt;em&gt;Push current&lt;/em&gt;).  Start typing the name of your remote (in my case, &lt;code&gt;mine&lt;/code&gt;), and it will finish the branch name for you – &lt;code&gt;mine/fix/spacemacs-home-buffer-bookmarks-jump&lt;/code&gt;.  Hit &lt;code&gt;RETURN&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;make-the-pull-request&quot;&gt;Make the pull request&lt;/h3&gt;
+
+&lt;p&gt;You are now ready to submit your pull request.  Switch back to your browser to the page for your fork.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Github will show your recently pushed branches near the top, in a yellow box.  Refresh your page if you don’t see this.  Click the green &lt;em&gt;“Compare &amp;amp; pull request”&lt;/em&gt; button.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the next screen, Github will prompt you for a branch to compare against.  By default it will show &lt;em&gt;base: master&lt;/em&gt;.  We want to select &lt;code&gt;develop&lt;/code&gt; here.  As shown in the video, it make take a minute for the page to update after you have selected the &lt;code&gt;develop&lt;/code&gt; branch.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you’ve done everything right, it will be able to cleanly merge your commit and will indicate so.  It will then pull from your commit message the subject and description.  If you’ve written a good commit message, there should be no need to add anything here.  Click &lt;em&gt;Create pull request&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Congratulations!  There you go, you have created your first pull request.  Hopefully the project developers will like your pull request and merge it.&lt;/p&gt;
+
+&lt;p&gt;Happy Hacking!&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2015/07/29/how-to-make-a-pr-for-spacemacs/&quot;&gt;How to Make a Pull Request for Spacemacs&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on July 29, 2015.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -1239,33 +1364,6 @@ experience be a stepping stone for working with the world.&lt;/p&gt;
 &lt;p&gt;I treasure those moments.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/06/17/driving-in-my-car/&quot;&gt;Driving, in my car&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 17, 2011.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Just a small act of kindness]]></title>
- <link rel="alternate" type="text/html" href="http://iam.travishartwell.net/2011/06/16/just-a-small-act-of-kindness/" />
-  <id>http://iam.travishartwell.net/2011/06/16/just-a-small-act-of-kindness</id>
-  <published>2011-06-16T01:45:00-06:00</published>
-  <updated>2011-06-16T01:45:00-06:00</updated>
-  <author>
-    <name>Travis B. Hartwell</name>
-    <uri>http://iam.travishartwell.net</uri>
-    <email>nafai@travishartwell.net</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;I went to lunch today at an Indian restaurant with my coworkers. When we went to pay, I ran into a very common problem for me.&lt;/p&gt;
-
-&lt;p&gt;I’m only 4’6″ (roughly 137 cm for my non-Imperial friends) tall.&lt;/p&gt;
-
-&lt;p&gt;The counter at the cash register was pretty much as tall as me. I could barely see over it. I certainly couldn’t reach to use it to sign my reciept when I paid. Like I said, a common problem for me. But wasn’t common was just a small thing — and I don’t even think I can fully describe how significant it was or what made it significant to me — that the owner of the restaurant did.&lt;/p&gt;
-
-&lt;p&gt;When I took my turn to step up to the counter to pay, she immediately apologized to me that I couldn’t reach or see things. After I handed her my card, she got one of those little folders for credit card receipts, stepped to the side of the counter, and handed it to me with my card and my receipt and a pen so I could sign the receipt. My coworkers had just signed their receipts on the top of the counter. But she made this kind little gesture to make it so I could sign things.&lt;/p&gt;
-
-&lt;p&gt;I don’t why it had such significance for me. She didn’t make a big deal out of things. But at the same time, she took a moment to help me out and did it in a kind manner. It’s these little things that make me comfortable and not fret about being different.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;http://iam.travishartwell.net/2011/06/16/just-a-small-act-of-kindness/&quot;&gt;Just a small act of kindness&lt;/a&gt; was originally published by Travis B. Hartwell at &lt;a href=&quot;http://iam.travishartwell.net&quot;&gt;I am Travis&lt;/a&gt; on June 16, 2011.&lt;/p&gt;
   </content>
 </entry>
 
