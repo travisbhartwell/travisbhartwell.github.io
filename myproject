@@ -41,7 +41,7 @@ project.register_task_with_fileset format-all-shell-files project:shell.format S
 project.register_task_with_fileset lint-all-shell-files project:shell.lint SHELL_FILES
 
 #----------------------------------------
-# HTML Template Files
+# HTML Files
 project.register_fileset HTML_FILES
 # shellcheck disable=SC2154
 project.find_files_for_fileset HTML_FILES "${MYPROJECT_BASE_DIR}" -type f -name '*.html'
