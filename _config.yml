@@ -1,1 +1,1 @@
-exclude: ['myproject', '.gitignore']
+exclude: ["myproject", ".gitignore"]

@@ -69,9 +69,9 @@ mycmd.trace "- PICO_CSS_DOWNLOAD_BASE: ${PICO_CSS_DOWNLOAD_BASE}"
 mycmd.defer_at_startup mycmd.init_bin git
 mycmd.defer_at_startup mycmd.init_bin sed
 function get_latest_release() {
-    mycmd.bin_execute git ls-remote --tags --sort="-version:refname" "${PICO_CSS_GITHUB_URL}" |
-        head -n1 |
-        mycmd.bin_execute sed -r -n 's/.*refs\/tags\/v(.*)/\1/p'
+    mycmd.bin_execute git ls-remote --tags --sort="-version:refname" "${PICO_CSS_GITHUB_URL}" \
+        | head -n1 \
+        | mycmd.bin_execute sed -r -n 's/.*refs\/tags\/v(.*)/\1/p'
 }
 
 mycmd.defer_at_startup mycmd.init_bin sed
@@ -130,7 +130,7 @@ function update-pico-css-if-needed() {
 project.register_task update-pico-css-if-needed
 
 #----------------------------------------
-# Site Generation Commands
+# Site Preview Commands
 mycmd.defer_at_startup mycmd.init_bin tmux
 mycmd.defer_at_startup mycmd.init_bin curl
 function preview() {
@@ -145,3 +145,18 @@ function preview() {
     fi
 }
 project.register_task preview
+
+#----------------------------------------
+# Format
+mycmd.defer_at_startup mycmd.init_bin deno
+function format-html() {
+    local -n fileset="${1}"
+
+    mycmd.bin_execute deno fmt "${fileset[@]}"
+}
+project.register_task_with_fileset format-html format-html HTML_FILES
+
+function format-all() {
+    project.execute_tasks format-html format-all-shell-files
+}
+project.register_task format-all
