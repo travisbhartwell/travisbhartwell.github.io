@@ -1,0 +1,80 @@
+#!/usr/bin/env -S mycmd myproject run
+# -*- mode: shell-script; sh-shell: bash; sh-basic-offset: 4; sh-indentation: 4; coding: utf-8 -*-
+# shellcheck shell=bash
+
+set -o nounset -o errexit -o errtrace -o pipefail
+
+myproject.register_task_definition_file_description "This is the static source for https://iam.travishartwell.net/"
+
+# --------------------------------------------------------------------------------------------------
+# Project-Wide Variables
+
+mycmd.trace "The following variables set by MyProject are used in the main task definition file:"
+# shellcheck disable=SC2154
+mycmd.trace "- MYPROJECT_ROOT_DIRECTORY:            ${MYPROJECT_ROOT_DIRECTORY}"
+# shellcheck disable=SC2154
+mycmd.trace "- MYPROJECT_TASK_DEFINITION_DIRECTORY: ${MYPROJECT_TASK_DEFINITION_DIRECTORY}"
+
+readonly CSS_DIR="${MYPROJECT_ROOT_DIRECTORY}/css"
+readonly WORKING_DIR="${MYPROJECT_ROOT_DIRECTORY}/.working"
+
+mycmd.trace "Set the following variables:"
+mycmd.trace "- CSS_DIR:     ${CSS_DIR}"
+mycmd.trace "- WORKING_DIR: ${WORKING_DIR}"
+
+# --------------------------------------------------------------------------------------------------
+# Project File Sets
+
+# All Files
+myproject.register_fileset ALL_FILES
+myproject.find_and_add_files_to_fileset ALL_FILES "${MYPROJECT_ROOT_DIRECTORY}" -path "${MYPROJECT_ROOT_DIRECTORY}/.git" -prune -o -type f
+
+# Task Definition Files
+myproject.register_fileset TASK_DEFINITION_FILES
+myproject.add_files_to_fileset TASK_DEFINITION_FILES "${MYPROJECT_TASK_DEFINITION_DIRECTORY}"/*
+
+# HTML Files
+myproject.register_fileset HTML_FILES
+myproject.find_and_add_files_to_fileset HTML_FILES "${MYPROJECT_ROOT_DIRECTORY}" -type f -name '*.html'
+
+# CSS Files
+myproject.register_fileset CSS_FILES
+myproject.find_and_add_files_to_fileset CSS_FILES "${MYPROJECT_ROOT_DIRECTORY}" -type f -name '*.css'
+
+# --------------------------------------------------------------------------------------------------
+# Site Preview Commands
+mycmd.defer_at_startup mycmd.init_bin tmux
+mycmd.defer_at_startup mycmd.init_bin curl
+function preview() {
+    if [[ -v TMUX ]]; then
+        myproject.output_only_if_not_quiet "Starting a Web Server In Tmux"
+        mycmd.bin_execute tmux new-window -n preview-http -d -c "${MYPROJECT_ROOT_DIRECTORY}" 'python3 -m http.server 8080'
+
+        project.output_only_if_not_quiet "Waiting for server to start..."
+        mymycmd.bin_execute curl --silent --head -X GET --retry 20 --retry-connrefused --retry-delay 1 http://localhost:8080
+
+        open http://localhost:8080
+    fi
+}
+
+myproject.register_task preview
+myproject.register_task_description preview "Start a web server in tmux and open the site in the broswer."
+
+function format_all() {
+    myproject.execute_tasks task-definition-files format \; html format
+}
+
+myproject.register_task format-all format_all
+myproject.register_task_description format-all "Format all files in the project."
+
+# --------------------------------------------------------------------------------------------------
+# Main Tasks
+
+function all() {
+    myproject.execute_tasks format-all \; task-definition-files lint
+}
+
+myproject.register_task all
+myproject.register_task_description all "Execute all build tasks: format and lint."
+
+mycmd.trace "Finished loading the main task definition file."

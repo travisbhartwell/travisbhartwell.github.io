@@ -1,0 +1,21 @@
+#!/usr/bin/env -S mycmd myproject run
+# -*- mode: shell-script; sh-shell: bash; sh-basic-offset: 4; sh-indentation: 4; coding: utf-8 -*-
+# shellcheck shell=bash
+
+set -o nounset -o errexit -o errtrace -o pipefail
+
+# --------------------------------------------------------------------------------------------------
+# HTML related Tasks
+myproject.register_task_definition_file_description "HTML file related tasks for the project"
+
+mycmd.defer_at_startup mycmd.init_bin deno
+function format_html() {
+    local -n fileset="${1}"
+
+    mycmd.bin_execute deno fmt "${fileset[@]}"
+}
+
+myproject.register_task_with_fileset format format_html HTML_FILES
+myproject.register_task_description format "Format HTML files in the project with Deno."
+
+mycmd.trace "Finished loading the HTML task definition file."
