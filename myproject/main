@@ -43,8 +43,8 @@ myproject.find_and_add_files_to_fileset CSS_FILES "${MYPROJECT_ROOT_DIRECTORY}" 
 
 # --------------------------------------------------------------------------------------------------
 # Site Preview Commands
-mycmd.defer_at_startup mycmd.init_bin tmux
-mycmd.defer_at_startup mycmd.init_bin curl
+mycmd.add_to_init_bin_batch tmux
+mycmd.add_to_init_bin_batch curl
 function preview() {
     if [[ -v TMUX ]]; then
         myproject.output_only_if_not_quiet "Starting a Web Server In Tmux"

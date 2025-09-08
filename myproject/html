@@ -8,7 +8,7 @@ set -o nounset -o errexit -o errtrace -o pipefail
 # HTML related Tasks
 myproject.register_task_definition_file_description "HTML file related tasks for the project"
 
-mycmd.defer_at_startup mycmd.init_bin deno
+mycmd.add_to_init_bin_batch deno
 function format_html() {
     local -n fileset="${1}"
 
